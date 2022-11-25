@@ -9,6 +9,7 @@ Color pinkThree = Color(0xffFAEFF1);
 Color greenOne = Color(0xff8ADDAE);
 Color greenTwo = Color(0xff64D294);
 Color grayOne = Color(0xffB6B6B6);
+Color graythree = Color(0xffEDEDED);
 Color backgroundColor = Color(0xffFFFFFF);
 
 TextStyle primaryTextStyle = GoogleFonts.nunito(
