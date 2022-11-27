@@ -99,7 +99,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             color: pinkOne,
                             borderRadius: BorderRadius.circular(12)),
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/login-page');
+                          },
                           child: Text(
                             'Continue with Mobile Number',
                             style: backgroundColorStyle.copyWith(
