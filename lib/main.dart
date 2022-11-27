@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heartfilia_app/home/login_page.dart';
 import 'package:heartfilia_app/pages/onboarding_page.dart';
 import 'package:heartfilia_app/pages/splash_screen.dart';
 
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         '/' :(context) => SplashScreen(),
-        '/onboarding-page' :(context) => OnboardingPage()
+        '/onboarding-page' :(context) => OnboardingPage(),
+        '/login-page' :(context) => LoginPage(),
       },
     );
   }
