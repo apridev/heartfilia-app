@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:heartfilia_app/home/register_page.dart';
 import 'package:heartfilia_app/home/login_page.dart';
+import 'package:heartfilia_app/home/reset_password.dart';
 import 'package:heartfilia_app/pages/onboarding_page.dart';
 import 'package:heartfilia_app/pages/splash_screen.dart';
 
@@ -17,6 +19,8 @@ class MyApp extends StatelessWidget {
         '/' :(context) => SplashScreen(),
         '/onboarding-page' :(context) => OnboardingPage(),
         '/login-page' :(context) => LoginPage(),
+        '/register-page' :(context) => RegisterPage(),
+        '/reset-password' :(context) => ResetPasswordPage(),
       },
     );
   }
