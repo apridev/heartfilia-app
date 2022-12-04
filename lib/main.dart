@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heartfilia_app/components/navigationbar-page.dart';
 import 'package:heartfilia_app/home/register_page.dart';
 import 'package:heartfilia_app/home/login_page.dart';
 import 'package:heartfilia_app/home/reset_password.dart';
@@ -23,6 +24,11 @@ class MyApp extends StatelessWidget {
         '/register-page' :(context) => RegisterPage(),
         '/reset-password' :(context) => ResetPasswordPage(),
         '/verification-page' :(context) => VerificationPage(),
+        '/navigationbar-page' :(context) => NavigationbarPage(),
+        '/home-page' :(context) => VerificationPage(),
+        '/schedule-page' :(context) => VerificationPage(),
+        '/chat-page' :(context) => VerificationPage(),
+        '/like-page' :(context) => VerificationPage(),
       },
     );
   }
