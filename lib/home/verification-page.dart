@@ -142,7 +142,7 @@ class VerificationPage extends StatelessWidget {
                         color: pinkOne),
                     child: TextButton(
                       onPressed: () {
-                        // Isi disini
+                        Navigator.pushNamedAndRemoveUntil(context, '/navigationbar-page', (route) => false);
                       },
                       child: Text(
                         'Verification',
