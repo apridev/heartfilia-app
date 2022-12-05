@@ -190,25 +190,8 @@ class RegisterPage extends StatelessWidget {
                         right: 20,
                         top: MediaQuery.of(context).size.height * 0.02),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          child: Row(
-                            children: [
-                              Image.asset('assets/icons/icon_remember_me_off.png',
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.07),
-                              SizedBox(
-                                width: 8,
-                              ),
-                              Text(
-                                'Remember me',
-                                style: primaryTextStyle.copyWith(
-                                    fontSize: 13, fontWeight: medium),
-                              ),
-                            ],
-                          ),
-                        ),
                         Row(
                           children: [
                             Text(
