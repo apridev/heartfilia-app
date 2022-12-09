@@ -33,7 +33,7 @@ class _NavigationbarPageState extends State<NavigationbarPage> {
           onTap: (value){
             setState(() {
               currentIndex = value;
-              print(value);
+              // print(value);
             });
           },
           items: [
