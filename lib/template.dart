@@ -32,6 +32,10 @@ TextStyle backgroundColorStyle = GoogleFonts.nunito(
   color: backgroundColor
 );
 
+TextStyle grayOneColorStyle = GoogleFonts.nunito(
+  color: grayOne
+);
+
 FontWeight regular = FontWeight.w400;
 FontWeight medium = FontWeight.w500;
 FontWeight semiBold = FontWeight.w600;
