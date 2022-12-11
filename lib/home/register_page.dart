@@ -55,8 +55,8 @@ class RegisterPage extends StatelessWidget {
                   Container(
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.04,
-                          left: 20,
-                          right: 20),
+                          left: defaultMargin,
+                          right: defaultMargin),
                       child: TextField(
                         textAlign: TextAlign.start,
                         textAlignVertical: TextAlignVertical.center,
@@ -79,7 +79,7 @@ class RegisterPage extends StatelessWidget {
                               children: [
                                 Image.asset(
                                   'assets/icons/icon_username.png',
-                                  height: 20,
+                                  height: defaultMargin,
                                 ),
                               ],
                             ),
@@ -90,8 +90,8 @@ class RegisterPage extends StatelessWidget {
                   Container(
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.03,
-                          left: 20,
-                          right: 20),
+                          left: defaultMargin,
+                          right: defaultMargin),
                       child: TextField(
                         textAlign: TextAlign.start,
                         textAlignVertical: TextAlignVertical.center,
@@ -114,7 +114,7 @@ class RegisterPage extends StatelessWidget {
                               children: [
                                 Image.asset(
                                   'assets/icons/icon_phonenumber.png',
-                                  height: 20,
+                                  height: defaultMargin,
                                 ),
                               ],
                             ),
@@ -125,8 +125,8 @@ class RegisterPage extends StatelessWidget {
                   Container(
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.03,
-                          left: 20,
-                          right: 20),
+                          left: defaultMargin,
+                          right: defaultMargin),
                       child: TextField(
                         obscureText: true,
                         textAlign: TextAlign.start,
@@ -150,7 +150,7 @@ class RegisterPage extends StatelessWidget {
                               children: [
                                 Image.asset(
                                   'assets/icons/icon_password.png',
-                                  height: 20,
+                                  height: defaultMargin,
                                 ),
                               ],
                             ),
@@ -168,7 +168,7 @@ class RegisterPage extends StatelessWidget {
                     margin: EdgeInsets.only(
                         top: MediaQuery.of(context).size.height * 0.04),
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 20),
+                      margin: EdgeInsets.symmetric(horizontal: defaultMargin),
                       width: double.infinity,
                       height: MediaQuery.of(context).size.height * 0.07,
                       decoration: BoxDecoration(
@@ -186,8 +186,8 @@ class RegisterPage extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.only(
-                        left: 20,
-                        right: 20,
+                        left: defaultMargin,
+                        right: defaultMargin,
                         top: MediaQuery.of(context).size.height * 0.02),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -220,13 +220,13 @@ class RegisterPage extends StatelessWidget {
                   Container(
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.02,
-                          left: 20,
-                          right: 20),
+                          left: defaultMargin,
+                          right: defaultMargin),
                       child: Image.asset('assets/images/or_account.png')),
                   Container(
                     margin: EdgeInsets.only(
-                        left: 20,
-                        right: 20,
+                        left: defaultMargin,
+                        right: defaultMargin,
                         top: MediaQuery.of(context).size.height * 0.02),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
