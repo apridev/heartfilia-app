@@ -56,8 +56,8 @@ class LoginPage extends StatelessWidget {
                   Container(
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.04,
-                          left: 20,
-                          right: 20),
+                          left: defaultMargin,
+                          right: defaultMargin),
                       child: TextField(
                         textAlign: TextAlign.start,
                         textAlignVertical: TextAlignVertical.center,
@@ -80,7 +80,7 @@ class LoginPage extends StatelessWidget {
                               children: [
                                 Image.asset(
                                   'assets/icons/icon_username.png',
-                                  height: 20,
+                                  height: defaultMargin,
                                 ),
                               ],
                             ),
@@ -91,8 +91,8 @@ class LoginPage extends StatelessWidget {
                   Container(
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.03,
-                          left: 20,
-                          right: 20),
+                          left: defaultMargin,
+                          right: defaultMargin),
                       child: TextField(
                         obscureText: true,
                         textAlign: TextAlign.start,
@@ -116,7 +116,7 @@ class LoginPage extends StatelessWidget {
                               children: [
                                 Image.asset(
                                   'assets/icons/icon_password.png',
-                                  height: 20,
+                                  height: defaultMargin,
                                 ),
                               ],
                             ),
@@ -136,8 +136,8 @@ class LoginPage extends StatelessWidget {
                       Container(
                         margin: EdgeInsets.only(
                             top: MediaQuery.of(context).size.height * 0.02,
-                            left: 20,
-                            right: 20),
+                            left: defaultMargin,
+                            right: defaultMargin),
                         child: GestureDetector(
                           onTap: () {
                             showDialog(
@@ -155,7 +155,7 @@ class LoginPage extends StatelessWidget {
                                               },
                                               child: Icon(Icons.close)),
                                           SizedBox(
-                                            height: 20,
+                                            height: defaultMargin,
                                           ),
                                           Text(
                                             'Forget \nPassword',
@@ -264,7 +264,7 @@ class LoginPage extends StatelessWidget {
                     margin: EdgeInsets.only(
                         top: MediaQuery.of(context).size.height * 0.03),
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 20),
+                      margin: EdgeInsets.symmetric(horizontal: defaultMargin),
                       width: double.infinity,
                       height: MediaQuery.of(context).size.height * 0.07,
                       decoration: BoxDecoration(
@@ -284,8 +284,8 @@ class LoginPage extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.only(
-                        left: 20,
-                        right: 20,
+                        left: defaultMargin,
+                        right: defaultMargin,
                         top: MediaQuery.of(context).size.height * 0.02),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -318,13 +318,13 @@ class LoginPage extends StatelessWidget {
                   Container(
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.02,
-                          left: 20,
-                          right: 20),
+                          left: defaultMargin,
+                          right: defaultMargin),
                       child: Image.asset('assets/images/or_account.png')),
                   Container(
                     margin: EdgeInsets.only(
-                        left: 20,
-                        right: 20,
+                        left: defaultMargin,
+                        right: defaultMargin,
                         top: MediaQuery.of(context).size.height * 0.02),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
