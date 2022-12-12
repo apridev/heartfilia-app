@@ -169,6 +169,86 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget flashSale(){
+      return Container(
+        margin: EdgeInsets.only(
+          top: MediaQuery.of(context).size.height * 0.03,
+          left: defaultMargin,
+          right: defaultMargin
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              child: Row(
+                children: [
+                  Text('Flash Sale', style: primaryTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: semiBold
+                  )),
+                  SizedBox(
+                    width: 12,
+                  ),
+                  
+                  //todo Flash Sale don't Otomatis
+                  Container(
+                    alignment: Alignment.center,
+                    width: MediaQuery.of(context).size.width * 0.1,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: pinkOne
+                    ),
+                    child: Text('12', style: backgroundColorStyle.copyWith(
+                      fontSize: 14,
+                      fontWeight: semiBold
+                    ), textAlign: TextAlign.center,),
+                  ),
+                  SizedBox(
+                    width: 6,
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    width: MediaQuery.of(context).size.width * 0.1,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: pinkOne
+                    ),
+                    child: Text('04', style: backgroundColorStyle.copyWith(
+                      fontSize: 14,
+                      fontWeight: semiBold
+                    ), textAlign: TextAlign.center,),
+                  ),
+                  SizedBox(
+                    width: 6,
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    width: MediaQuery.of(context).size.width * 0.1,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: pinkOne
+                    ),
+                    child: Text('59', style: backgroundColorStyle.copyWith(
+                      fontSize: 14,
+                      fontWeight: semiBold
+                    ), textAlign: TextAlign.center,),
+                  ),
+                ],
+              ),
+            ),
+            
+            Text('See all', style: secondaryBlackStyle.copyWith(
+              fontSize: 14,
+              fontWeight: semiBold
+            ),)
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
         body: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -176,7 +256,8 @@ class HomePage extends StatelessWidget {
         headerNav(), 
         searchproduct(), 
         imageSlader(),
-        categories()
+        categories(),
+        flashSale()
       ],
     ));
   }
