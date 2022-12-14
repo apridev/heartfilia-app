@@ -9,6 +9,7 @@ Color pinkThree = Color(0xffFAEFF1);
 Color greenOne = Color(0xff8ADDAE);
 Color greenTwo = Color(0xff64D294);
 Color grayOne = Color(0xffB6B6B6);
+Color grayTwo = Color(0xffC5C5C5);
 Color graythree = Color(0xffEDEDED);
 Color backgroundColor = Color(0xffFFFFFF);
 
@@ -36,6 +37,10 @@ TextStyle backgroundColorStyle = GoogleFonts.nunito(
 
 TextStyle grayOneColorStyle = GoogleFonts.nunito(
   color: grayOne
+);
+
+TextStyle grayTwoColorStyle = GoogleFonts.nunito(
+  color: grayTwo
 );
 
 FontWeight regular = FontWeight.w400;
