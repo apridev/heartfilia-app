@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:heartfilia_app/template.dart';
+import 'package:heartfilia_app/widgets/categories_tile.dart';
+import 'package:heartfilia_app/widgets/flash_sale_product_tile.dart';
+import 'package:heartfilia_app/widgets/popular_product.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -118,52 +121,43 @@ class HomePage extends StatelessWidget {
     Widget categories() {
       return Container(
         margin: EdgeInsets.only(
-            top: MediaQuery.of(context).size.height * 0.03,
-            left: 20,
-            right: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              child: GestureDetector(
-                onTap: () {},
-                child: Text(
-                  'All',
-                  style:
-                      pinkOneStyle.copyWith(fontSize: 14, fontWeight: semiBold),
+            top: MediaQuery.of(context).size.height * 0.03,),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Container(
+            margin: EdgeInsets.only(
+              left: defaultMargin,
+              right: 2
+            ),
+            child: Row(
+              children: [
+                CategoriesTile(
+                  nameCategories: 'All', 
+                  type: pinkOneStyle
                 ),
-              ),
+                CategoriesTile(
+                  nameCategories: 'On Sale', 
+                  type: grayOneColorStyle
+                ),
+                CategoriesTile(
+                  nameCategories: 'Popular', 
+                  type: grayOneColorStyle
+                ),
+                CategoriesTile(
+                  nameCategories: 'New arrivals', 
+                  type: grayOneColorStyle
+                ),
+                CategoriesTile(
+                  nameCategories: 'Package', 
+                  type: grayOneColorStyle
+                ),
+                CategoriesTile(
+                  nameCategories: 'Health', 
+                  type: grayOneColorStyle
+                ),
+              ],
             ),
-            Container(
-              child: Text(
-                'On Sale',
-                style: grayOneColorStyle.copyWith(
-                    fontSize: 14, fontWeight: semiBold),
-              ),
-            ),
-            Container(
-              child: Text(
-                'New arrivals',
-                style: grayOneColorStyle.copyWith(
-                    fontSize: 14, fontWeight: semiBold),
-              ),
-            ),
-            Container(
-              child: Text(
-                'Package',
-                style: grayOneColorStyle.copyWith(
-                    fontSize: 14, fontWeight: semiBold),
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.only(right: 12),
-              child: Text(
-                'Healty',
-                style: grayOneColorStyle.copyWith(
-                    fontSize: 14, fontWeight: semiBold),
-              ),
-            ),
-          ],
+          ),
         ),
       );
     }
@@ -247,59 +241,130 @@ class HomePage extends StatelessWidget {
     }
 
     Widget productSale() {
+      return ScrollConfiguration(
+        behavior: ScrollBehavior().copyWith(overscroll: false),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Container(
+            margin: EdgeInsets.only(left: 20, right: 2),
+            child: Row(
+              children: [
+                FlashSaleProductTile(
+                    images: 'assets/images/product_one.png',
+                    categories: 'Wardah Beauty',
+                    nameProduct: 'Acnederm Acne Care Serum',
+                    priceBefore: '\$4.14',
+                    priceAfter: '\$3.74',
+                    stock: 100,
+                    qty: '29'),
+                FlashSaleProductTile(
+                    images: 'assets/images/product_two.png',
+                    categories: 'Scarlett',
+                    nameProduct: 'Brightening Fragrance Body Lotion',
+                    priceBefore: '\$5.52',
+                    priceAfter: '\$3.93',
+                    stock: 50,
+                    qty: '14'),
+                FlashSaleProductTile(
+                    images: 'assets/images/product_three.png',
+                    categories: 'Ponds',
+                    nameProduct: 'Bright Beauty Facial Foam',
+                    priceBefore: '\$4.16',
+                    priceAfter: '\$3.41',
+                    stock: 120,
+                    qty: '40'),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
+    Widget Populartitle() {
       return Container(
         margin: EdgeInsets.only(
             top: MediaQuery.of(context).size.height * 0.03,
-            left: 20,
-            right: 20),
-        width: MediaQuery.of(context).size.width * 0.5,
-        height: MediaQuery.of(context).size.height * 0.3,
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
-              spreadRadius: 2,
-              blurRadius: 3,
-              offset: Offset(0, 1), // changes position of shadow
-            ),
-          ],
-          borderRadius: BorderRadius.circular(12),
-          color: backgroundColor,
-        ),
-        child: Column(
+            left: defaultMargin,
+            right: defaultMargin),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.2,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(12),
-                  ),
-                  color: pinkThree),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: Row(
                 children: [
-                  Center(
-                      child: Image.asset('assets/images/product_one.png',
-                          width: 160)),
+                  Text('Popular',
+                      style: primaryTextStyle.copyWith(
+                          fontSize: 16, fontWeight: semiBold)),
+                  SizedBox(
+                    width: 12,
+                  ),
                 ],
               ),
             ),
+            Text(
+              'See all',
+              style: secondaryBlackStyle.copyWith(
+                  fontSize: 14, fontWeight: semiBold),
+            )
           ],
         ),
       );
     }
 
+    Widget popularProduct() {
+      return ScrollConfiguration(
+        behavior: ScrollBehavior().copyWith(overscroll: false),
+        child: Container(
+          margin: EdgeInsets.only(left: defaultMargin, right: 2),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                PopularProductTile(
+                  images: 'assets/images/product_three.png', 
+                  categories: 'Ponds', 
+                  nameProduct: 'Bright Beauty Facial Foam', 
+                  price: '\$4.14'
+                ),
+                PopularProductTile(
+                  images: 'assets/images/product_four.png', 
+                  categories: 'Ponds', 
+                  nameProduct: 'V SHIELD ESSENTIAL SUNSCREEN', 
+                  price: '\$2.41'
+                ),
+                PopularProductTile(
+                  images: 'assets/images/product_five.png', 
+                  categories: 'Wardah Beauty', 
+                  nameProduct: 'Wardah Crystal Secret Bright Activating Night Cream', 
+                  price: '\$6.52'
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
-        body: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+        body: ListView(
+      padding: EdgeInsets.all(0),
       children: [
-        headerNav(),
-        searchproduct(),
-        imageSlader(),
-        categories(),
-        flashSale(),
-        productSale()
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            headerNav(),
+            searchproduct(),
+            imageSlader(),
+            categories(),
+            flashSale(),
+            productSale(),
+            Populartitle(),
+            popularProduct(),
+            SizedBox(
+              height: 30,
+            ),
+          ],
+        ),
       ],
     ));
   }
