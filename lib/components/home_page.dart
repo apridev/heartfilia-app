@@ -3,6 +3,7 @@ import 'package:heartfilia_app/template.dart';
 import 'package:heartfilia_app/widgets/categories_tile.dart';
 import 'package:heartfilia_app/widgets/flash_sale_product_tile.dart';
 import 'package:heartfilia_app/widgets/popular_product.dart';
+import 'package:heartfilia_app/widgets/recommendation_product_tile.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -121,40 +122,25 @@ class HomePage extends StatelessWidget {
     Widget categories() {
       return Container(
         margin: EdgeInsets.only(
-            top: MediaQuery.of(context).size.height * 0.03,),
+          top: MediaQuery.of(context).size.height * 0.03,
+        ),
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Container(
-            margin: EdgeInsets.only(
-              left: defaultMargin,
-              right: 2
-            ),
+            margin: EdgeInsets.only(left: defaultMargin, right: 2),
             child: Row(
               children: [
+                CategoriesTile(nameCategories: 'All', type: pinkOneStyle),
                 CategoriesTile(
-                  nameCategories: 'All', 
-                  type: pinkOneStyle
-                ),
+                    nameCategories: 'On Sale', type: grayOneColorStyle),
                 CategoriesTile(
-                  nameCategories: 'On Sale', 
-                  type: grayOneColorStyle
-                ),
+                    nameCategories: 'Popular', type: grayOneColorStyle),
                 CategoriesTile(
-                  nameCategories: 'Popular', 
-                  type: grayOneColorStyle
-                ),
+                    nameCategories: 'New arrivals', type: grayOneColorStyle),
                 CategoriesTile(
-                  nameCategories: 'New arrivals', 
-                  type: grayOneColorStyle
-                ),
+                    nameCategories: 'Package', type: grayOneColorStyle),
                 CategoriesTile(
-                  nameCategories: 'Package', 
-                  type: grayOneColorStyle
-                ),
-                CategoriesTile(
-                  nameCategories: 'Health', 
-                  type: grayOneColorStyle
-                ),
+                    nameCategories: 'Health', type: grayOneColorStyle),
               ],
             ),
           ),
@@ -321,23 +307,21 @@ class HomePage extends StatelessWidget {
             child: Row(
               children: [
                 PopularProductTile(
-                  images: 'assets/images/product_three.png', 
-                  categories: 'Ponds', 
-                  nameProduct: 'Bright Beauty Facial Foam', 
-                  price: '\$4.14'
-                ),
+                    images: 'assets/images/product_three.png',
+                    categories: 'Ponds',
+                    nameProduct: 'Bright Beauty Facial Foam',
+                    price: '\$4.14'),
                 PopularProductTile(
-                  images: 'assets/images/product_four.png', 
-                  categories: 'Ponds', 
-                  nameProduct: 'V SHIELD ESSENTIAL SUNSCREEN', 
-                  price: '\$2.41'
-                ),
+                    images: 'assets/images/product_four.png',
+                    categories: 'Ponds',
+                    nameProduct: 'V SHIELD ESSENTIAL SUNSCREEN',
+                    price: '\$2.41'),
                 PopularProductTile(
-                  images: 'assets/images/product_five.png', 
-                  categories: 'Wardah Beauty', 
-                  nameProduct: 'Wardah Crystal Secret Bright Activating Night Cream', 
-                  price: '\$6.52'
-                ),
+                    images: 'assets/images/product_five.png',
+                    categories: 'Wardah Beauty',
+                    nameProduct:
+                        'Wardah Crystal Secret Bright Activating Night Cream',
+                    price: '\$6.52'),
               ],
             ),
           ),
@@ -345,27 +329,103 @@ class HomePage extends StatelessWidget {
       );
     }
 
-    return Scaffold(
-        body: ListView(
-      padding: EdgeInsets.all(0),
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    Widget recommendationtitle() {
+      return Container(
+        margin: EdgeInsets.only(
+            top: MediaQuery.of(context).size.height * 0.03,
+            left: defaultMargin,
+            right: defaultMargin),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            headerNav(),
-            searchproduct(),
-            imageSlader(),
-            categories(),
-            flashSale(),
-            productSale(),
-            Populartitle(),
-            popularProduct(),
-            SizedBox(
-              height: 30,
+            Container(
+              child: Row(
+                children: [
+                  Text('Recommendation',
+                      style: primaryTextStyle.copyWith(
+                          fontSize: 16, fontWeight: semiBold)),
+                  SizedBox(
+                    width: 12,
+                  ),
+                ],
+              ),
             ),
           ],
         ),
-      ],
-    ));
+      );
+    }
+
+    Widget recommendationProduct() {
+      return Container(
+        margin: EdgeInsets.only(left: defaultMargin, right: defaultMargin),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                RecommendationProductTile(
+                  images: 'assets/images/product_six.png', 
+                  categories: 'Wardah Beauty', 
+                  nameProduct: 'CRYSTAL SECRET BRIGHTENING DAY CREAM'
+                ),
+                RecommendationProductTile(
+                  images: 'assets/images/product_seven.png', 
+                  categories: 'Wardah Beauty', 
+                  nameProduct: 'UV SHIELD AQUA FRESH E...'
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                RecommendationProductTile(
+                  images: 'assets/images/product_one.png', 
+                  categories: 'Wardah Beauty', 
+                  nameProduct: 'Acnederm Acne Care Serum'
+                ),
+                RecommendationProductTile(
+                  images: 'assets/images/product_three.png', 
+                  categories: 'Wardah Beauty', 
+                  nameProduct: 'Bright Beauty Facial Foam'
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
+    }
+
+    return Scaffold(
+        body: ScrollConfiguration(
+          behavior: ScrollBehavior().copyWith(overscroll: false),
+          child: GestureDetector(
+            onTap: (){
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
+            child: ListView(
+                padding: EdgeInsets.all(0),
+                children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                headerNav(),
+                searchproduct(),
+                imageSlader(),
+                categories(),
+                flashSale(),
+                productSale(),
+                Populartitle(),
+                popularProduct(),
+                recommendationtitle(),
+                recommendationProduct(),
+                SizedBox(
+                  height: 30,
+                ),
+              ],
+            ),
+                ],
+              ),
+          ),
+        ));
   }
 }
