@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heartfilia_app/template.dart';
+import 'package:heartfilia_app/widgets/daily_schedule_tile.dart';
 import 'package:heartfilia_app/widgets/schedule_tile.dart';
 
 class CalenderPage extends StatelessWidget {
@@ -171,19 +172,9 @@ class CalenderPage extends StatelessWidget {
                   child: Column(
                     children: [
                       // ?? Not Fixed
-                      Row(
-                        children: [
-                          Column(
-                            children: [
-                              Image.asset(
-                                'assets/images/image_sun.png',
-                                width: 40,
-                              ),
-                            ],
-                          ),
-                          ScheduleTile(),
-                        ],
-                      ),
+                      DailyScheduleTile(),
+                      DailyScheduleTile(),
+                      DailyScheduleTile(),
                     ],
                   ),
                 ),
