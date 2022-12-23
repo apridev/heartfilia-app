@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:heartfilia_app/template.dart';
 
 class ScheduleTile extends StatelessWidget {
-  const ScheduleTile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
