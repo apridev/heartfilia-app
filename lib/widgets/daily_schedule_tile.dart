@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:heartfilia_app/widgets/schedule_tile.dart';
 
 class DailyScheduleTile extends StatelessWidget {
-  const DailyScheduleTile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
