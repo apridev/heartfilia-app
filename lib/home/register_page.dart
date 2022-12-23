@@ -52,6 +52,7 @@ class RegisterPage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  //?? Email address input
                   Container(
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.04,
@@ -87,6 +88,7 @@ class RegisterPage extends StatelessWidget {
                             hintStyle:
                                 secondaryBlackStyle.copyWith(fontSize: 14)),
                       )),
+                      //?? Password Input
                   Container(
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.03,
@@ -231,6 +233,7 @@ class RegisterPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
+                        //?? account google
                         Container(
                           width: MediaQuery.of(context).size.width * 0.4,
                           height: MediaQuery.of(context).size.height * 0.05,
@@ -255,6 +258,7 @@ class RegisterPage extends StatelessWidget {
                             ],
                           ),
                         ),
+                        //?? account facebook
                         Container(
                           width: MediaQuery.of(context).size.width * 0.4,
                           height: MediaQuery.of(context).size.height * 0.05,
