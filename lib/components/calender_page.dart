@@ -171,10 +171,20 @@ class CalenderPage extends StatelessWidget {
                       right: defaultMargin),
                   child: Column(
                     children: [
+                      Container(
+                        width: double.infinity,
+                        height: MediaQuery.of(context).size.height * 0.1,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: grayTwo,
+                          )
+                        ),
+                      ),
                       // ?? Not Fixed
                       DailyScheduleTile(),
                       DailyScheduleTile(),
-                      DailyScheduleTile(),
+                      
                     ],
                   ),
                 ),
