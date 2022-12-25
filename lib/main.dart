@@ -5,6 +5,7 @@ import 'package:heartfilia_app/components/chat_page.dart';
 import 'package:heartfilia_app/components/home_page.dart';
 import 'package:heartfilia_app/components/like_page.dart';
 import 'package:heartfilia_app/components/navigationbar-page.dart';
+import 'package:heartfilia_app/home/cart-page.dart';
 import 'package:heartfilia_app/home/register_page.dart';
 import 'package:heartfilia_app/home/login_page.dart';
 import 'package:heartfilia_app/home/reset_password.dart';
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         '/calender-page' :(context) => CalenderPage(),
         '/chat-page' :(context) => ChatPage(),
         '/like-page' :(context) => LikePage(),
+        '/cart-page' :(context) => CartPage(),
       },
     );
   }
