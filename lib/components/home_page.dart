@@ -8,36 +8,36 @@ import 'package:heartfilia_app/widgets/recommendation_product_tile.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget headerNav() {
-      return Container(
-        margin: EdgeInsets.only(top: 30, left: 20, right: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Image.asset(
-              'assets/images/heartfilia_home.png',
-              width: MediaQuery.of(context).size.width * 0.25,
-            ),
-            Row(
-              children: [
-                IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      'assets/icons/icon_cart.png',
-                      width: 24,
-                    )),
-                IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      'assets/icons/icon_hamburger.png',
-                      width: 24,
-                    )),
-              ],
-            ),
-          ],
-        ),
-      );
-    }
+    // Widget headerNav() {
+    //   return Container(
+    //     margin: EdgeInsets.only(top: 30, left: 20, right: 20),
+    //     child: Row(
+    //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //       children: [
+    //         Image.asset(
+    //           'assets/images/heartfilia_home.png',
+    //           width: MediaQuery.of(context).size.width * 0.25,
+    //         ),
+    //         Row(
+    //           children: [
+    //             IconButton(
+    //                 onPressed: () {},
+    //                 icon: Image.asset(
+    //                   'assets/icons/icon_cart.png',
+    //                   width: 24,
+    //                 )),
+    //             IconButton(
+    //                 onPressed: () {},
+    //                 icon: Image.asset(
+    //                   'assets/icons/icon_hamburger.png',
+    //                   width: 24,
+    //                 )),
+    //           ],
+    //         ),
+    //       ],
+    //     ),
+    //   );
+    // }
 
     Widget searchproduct() {
       return Container(
@@ -364,30 +364,26 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 RecommendationProductTile(
-                  images: 'assets/images/product_six.png', 
-                  categories: 'Wardah Beauty', 
-                  nameProduct: 'CRYSTAL SECRET BRIGHTENING DAY CREAM'
-                ),
+                    images: 'assets/images/product_six.png',
+                    categories: 'Wardah Beauty',
+                    nameProduct: 'CRYSTAL SECRET BRIGHTENING DAY CREAM'),
                 RecommendationProductTile(
-                  images: 'assets/images/product_seven.png', 
-                  categories: 'Wardah Beauty', 
-                  nameProduct: 'UV SHIELD AQUA FRESH E...'
-                ),
+                    images: 'assets/images/product_seven.png',
+                    categories: 'Wardah Beauty',
+                    nameProduct: 'UV SHIELD AQUA FRESH E...'),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 RecommendationProductTile(
-                  images: 'assets/images/product_one.png', 
-                  categories: 'Wardah Beauty', 
-                  nameProduct: 'Acnederm Acne Care Serum'
-                ),
+                    images: 'assets/images/product_one.png',
+                    categories: 'Wardah Beauty',
+                    nameProduct: 'Acnederm Acne Care Serum'),
                 RecommendationProductTile(
-                  images: 'assets/images/product_three.png', 
-                  categories: 'Wardah Beauty', 
-                  nameProduct: 'Bright Beauty Facial Foam'
-                ),
+                    images: 'assets/images/product_three.png',
+                    categories: 'Wardah Beauty',
+                    nameProduct: 'Bright Beauty Facial Foam'),
               ],
             ),
           ],
@@ -396,36 +392,61 @@ class HomePage extends StatelessWidget {
     }
 
     return Scaffold(
-        body: ScrollConfiguration(
-          behavior: ScrollBehavior().copyWith(overscroll: false),
-          child: GestureDetector(
-            onTap: (){
-              FocusManager.instance.primaryFocus?.unfocus();
-            },
-            child: ListView(
-                padding: EdgeInsets.all(0),
-                children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                headerNav(),
-                searchproduct(),
-                imageSlader(),
-                categories(),
-                flashSale(),
-                productSale(),
-                Populartitle(),
-                popularProduct(),
-                recommendationtitle(),
-                recommendationProduct(),
-                SizedBox(
-                  height: 30,
-                ),
-              ],
+      appBar: AppBar(
+        titleSpacing: 0,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              margin: EdgeInsets.only(
+                left: defaultMargin
+              ),
+              child: Image.asset(
+                'assets/images/heartfilia_home.png',
+                width: MediaQuery.of(context).size.height * 0.1,
+              ),
             ),
+            IconButton(
+              onPressed: (){}, 
+              icon: Image.asset('assets/icons/icon_cart.png', width: 24,)
+            ),
+          ],
+        ),
+        backgroundColor: backgroundColor,
+        elevation: 0,
+        iconTheme: IconThemeData(color: blackColor),
+      ),
+      endDrawer: Drawer(),
+      body: ScrollConfiguration(
+        behavior: ScrollBehavior().copyWith(overscroll: false),
+        child: GestureDetector(
+          onTap: () {
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          child: ListView(
+            padding: EdgeInsets.all(0),
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  searchproduct(),
+                  imageSlader(),
+                  categories(),
+                  flashSale(),
+                  productSale(),
+                  Populartitle(),
+                  popularProduct(),
+                  recommendationtitle(),
+                  recommendationProduct(),
+                  SizedBox(
+                    height: 30,
+                  ),
                 ],
               ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
