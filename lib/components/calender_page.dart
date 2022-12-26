@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heartfilia_app/template.dart';
 import 'package:heartfilia_app/widgets/daily_schedule_tile.dart';
-import 'package:heartfilia_app/widgets/schedule_tile.dart';
 
 class CalenderPage extends StatelessWidget {
   @override
@@ -182,8 +181,11 @@ class CalenderPage extends StatelessWidget {
                         ),
                       ),
                       // ?? Not Fixed
-                      DailyScheduleTile(),
-                      DailyScheduleTile(),
+                      DailyScheduleTile(
+                        images: 'assets/images/image_sun.png',
+                        categories: 'Sun Screen',
+                        name: 'Wardah UV Shield Essential Sunscreen...',
+                      )
                       
                     ],
                   ),
