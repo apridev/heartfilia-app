@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:heartfilia_app/template.dart';
 import 'package:heartfilia_app/widgets/daily_schedule_tile.dart';
@@ -170,14 +171,36 @@ class CalenderPage extends StatelessWidget {
                       right: defaultMargin),
                   child: Column(
                     children: [
-                      Container(
-                        width: double.infinity,
-                        height: MediaQuery.of(context).size.height * 0.1,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                            color: grayTwo,
-                          )
+                      // ??Gesture Detector
+                      DottedBorder(
+                        color: grayTwo,
+                        strokeWidth: 2,
+                        borderType: BorderType.RRect,
+                        radius: Radius.circular(12),
+                        dashPattern: [10, 5],
+                        child: Container(
+                          height: MediaQuery.of(context).size.height * 0.1,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              color: backgroundColor),
+                          child: Container(
+                            margin: EdgeInsets.only(
+                                left: defaultMargin, right: defaultMargin),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Add step / product',
+                                  style: primaryTextStyle.copyWith(
+                                      fontSize: 14, fontWeight: semiBold),
+                                ),
+                                Image.asset(
+                                  'assets/icons/icon_create_calender.png',
+                                  width: 27,
+                                )
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                       // ?? Not Fixed
@@ -186,7 +209,6 @@ class CalenderPage extends StatelessWidget {
                         categories: 'Sun Screen',
                         name: 'Wardah UV Shield Essential Sunscreen...',
                       )
-                      
                     ],
                   ),
                 ),
