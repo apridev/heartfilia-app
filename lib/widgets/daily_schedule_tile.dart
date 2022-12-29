@@ -6,11 +6,13 @@ class DailyScheduleTile extends StatelessWidget {
   final String images;
   final String categories;
   final String name;
+  final String checkMode;
 
   DailyScheduleTile({
     required this.images,
     required this.categories,
-    required this.name
+    required this.name,
+    required this.checkMode
   });
 
   @override
@@ -83,7 +85,7 @@ class DailyScheduleTile extends StatelessWidget {
                 Container(
                     margin: EdgeInsets.only(right: 12),
                     child: Image.asset(
-                      'assets/icons/icon_checklist_on.png',
+                      checkMode,
                       width: 20,
                     )),
               ],
