@@ -43,6 +43,10 @@ TextStyle grayTwoColorStyle = GoogleFonts.nunito(
   color: grayTwo
 );
 
+TextStyle greyThreeColorStyle = GoogleFonts.nunito(
+  color: graythree
+);
+
 TextStyle greenColorStyle = GoogleFonts.nunito(
   color: greenOne
 );
@@ -50,6 +54,7 @@ TextStyle greenColorStyle = GoogleFonts.nunito(
 TextStyle greenTwoColorStyle = GoogleFonts.nunito(
   color: greenTwo
 );
+
 
 FontWeight regular = FontWeight.w400;
 FontWeight medium = FontWeight.w500;
