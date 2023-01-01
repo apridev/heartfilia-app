@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:heartfilia_app/components/calender_page.dart';
 import 'package:heartfilia_app/components/chat_page.dart';
 import 'package:heartfilia_app/components/home_page.dart';
-import 'package:heartfilia_app/components/like_page.dart';
+import 'package:heartfilia_app/components/wishlist_page.dart';
 import 'package:heartfilia_app/home/login_page.dart';
 import 'package:heartfilia_app/template.dart';
 
@@ -109,7 +109,7 @@ class _NavigationbarPageState extends State<NavigationbarPage> {
           return ChatPage();
           break;
         case 3:
-          return LikePage();
+          return WishlistPage();
           break;
         default:
         return HomePage();
