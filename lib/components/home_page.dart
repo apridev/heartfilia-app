@@ -398,25 +398,73 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              margin: EdgeInsets.only(
-                left: defaultMargin
-              ),
+              margin: EdgeInsets.only(left: defaultMargin),
               child: Image.asset(
                 'assets/images/heartfilia_home.png',
                 width: MediaQuery.of(context).size.height * 0.1,
               ),
             ),
             IconButton(
-              onPressed: (){}, 
-              icon: Image.asset('assets/icons/icon_cart.png', width: 24,)
-            ),
+                onPressed: () {},
+                icon: Image.asset(
+                  'assets/icons/icon_cart.png',
+                  width: 24,
+                )),
           ],
         ),
         backgroundColor: backgroundColor,
         elevation: 0,
         iconTheme: IconThemeData(color: blackColor),
       ),
-      endDrawer: Drawer(),
+      endDrawer: Drawer(
+        child: Column(
+          children: [
+            Container(
+              height: 210,
+              width: double.infinity,
+              decoration: BoxDecoration(color: pinkOne),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ClipOval(
+                    child: Image.asset(
+                      'assets/images/img_profile.png',
+                      width: 80,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  Text(
+                    'Rayna Lipshutz',
+                    style: backgroundColorStyle.copyWith(
+                        fontSize: 14, fontWeight: semiBold),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/icons/icon_profile_profile_edit.png',
+                        width: 25,
+                      ),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Image.asset(
+                        'assets/icons/icon_profile_profile_setting.png',
+                        width: 25,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
       body: ScrollConfiguration(
         behavior: ScrollBehavior().copyWith(overscroll: false),
         child: GestureDetector(
