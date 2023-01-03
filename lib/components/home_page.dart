@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:heartfilia_app/template.dart';
 import 'package:heartfilia_app/widgets/categories_tile.dart';
 import 'package:heartfilia_app/widgets/flash_sale_product_tile.dart';
+import 'package:heartfilia_app/widgets/menu_profile_tile.dart';
 import 'package:heartfilia_app/widgets/popular_product.dart';
 import 'package:heartfilia_app/widgets/recommendation_product_tile.dart';
 
@@ -418,6 +419,7 @@ class HomePage extends StatelessWidget {
       ),
       endDrawer: Drawer(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               height: 210,
@@ -461,7 +463,21 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                left: defaultMargin,
+                right: defaultMargin
+              ),
+              child: Column(
+                children: [
+                  MenuProfileTile(
+                    images: 'assets/icons/icon_profile_list_order.png', 
+                    nameProfile: 'List Order',
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
