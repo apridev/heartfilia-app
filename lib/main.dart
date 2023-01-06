@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:heartfilia_app/components/calender_page.dart';
 import 'package:heartfilia_app/components/chat_page.dart';
+import 'package:heartfilia_app/components/detail_chat_page.dart';
 import 'package:heartfilia_app/components/home_page.dart';
 import 'package:heartfilia_app/components/wishlist_page.dart';
 import 'package:heartfilia_app/components/navigationbar-page.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         '/chat-page' :(context) => ChatPage(),
         '/wishlist-page' :(context) => WishlistPage(),
         '/cart-page' :(context) => CartPage(),
+        '/detail-chat-page' :(context) => DetailChatPage(),
       },
     );
   }
