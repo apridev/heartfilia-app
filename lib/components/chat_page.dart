@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heartfilia_app/template.dart';
+import 'package:heartfilia_app/widgets/chat-tile.dart';
 import 'package:heartfilia_app/widgets/menu_profile_tile.dart';
 
 class ChatPage extends StatelessWidget {
@@ -21,8 +22,8 @@ class ChatPage extends StatelessWidget {
           behavior: ScrollBehavior().copyWith(overscroll: false),
           child: ListView(
             padding: EdgeInsets.all(0),
-            children: 
-              [Column(
+            children: [
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
@@ -69,8 +70,8 @@ class ChatPage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    margin:
-                        EdgeInsets.only(left: defaultMargin, right: defaultMargin),
+                    margin: EdgeInsets.only(
+                        left: defaultMargin, right: defaultMargin),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -86,51 +87,45 @@ class ChatPage extends StatelessWidget {
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_list_order.png', 
-                          nameProfile: 'List Order'
-                        ),
+                            images: 'assets/icons/icon_profile_list_order.png',
+                            nameProfile: 'List Order'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_wishlist_product.png', 
-                          nameProfile: 'Wishlist Product'
-                        ),
+                            images:
+                                'assets/icons/icon_profile_wishlist_product.png',
+                            nameProfile: 'Wishlist Product'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_reviews.png', 
-                          nameProfile: 'Reviews'
-                        ),
+                            images: 'assets/icons/icon_profile_reviews.png',
+                            nameProfile: 'Reviews'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_categories.png', 
-                          nameProfile: 'Categories'
-                        ),
+                            images: 'assets/icons/icon_profile_categories.png',
+                            nameProfile: 'Categories'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_transaction.png', 
-                          nameProfile: 'Transaction'
-                        ),
+                            images: 'assets/icons/icon_profile_transaction.png',
+                            nameProfile: 'Transaction'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_my_address.png', 
-                          nameProfile: 'My Address'
-                        ),
+                            images: 'assets/icons/icon_profile_my_address.png',
+                            nameProfile: 'My Address'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_voucers.png', 
-                          nameProfile: 'Vouchers'
-                        ),
+                            images: 'assets/icons/icon_profile_voucers.png',
+                            nameProfile: 'Vouchers'),
                         SizedBox(
                           height: 30,
                         ),
@@ -143,23 +138,22 @@ class ChatPage extends StatelessWidget {
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_complaint_order.png', 
-                          nameProfile: 'Complaint Order'
-                        ),
+                            images:
+                                'assets/icons/icon_profile_complaint_order.png',
+                            nameProfile: 'Complaint Order'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_help_center.png', 
-                          nameProfile: 'Heartfilia Help Center'
-                        ),
+                            images: 'assets/icons/icon_profile_help_center.png',
+                            nameProfile: 'Heartfilia Help Center'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_logout_account.png', 
-                          nameProfile: 'Logout Account'
-                        ),
+                            images:
+                                'assets/icons/icon_profile_logout_account.png',
+                            nameProfile: 'Logout Account'),
                         SizedBox(
                           height: 30,
                         ),
@@ -175,66 +169,15 @@ class ChatPage extends StatelessWidget {
       // !! Add to Widget
       body: Column(
         children: [
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-            height: MediaQuery.of(context).size.height * 0.1,
-            decoration: BoxDecoration(color: backgroundColor),
-            child: Container(
-              padding: EdgeInsets.all(12),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ClipOval(
-                      child: Image.asset(
-                        'assets/images/image_chat.png',
-                        width: MediaQuery.of(context).size.width * 0.15,
-                      )),
-                  SizedBox(
-                    width: 12,
-                  ),
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Heartfilia Care Center',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: semiBold),
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        Text(
-                          'Good night, This item is on item is on This item is on item is on ',
-                          style: secondaryBlackStyle.copyWith(
-                              fontSize: 12, fontWeight: medium),
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 50,
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Now',
-                        style: primaryTextStyle.copyWith(
-                          fontSize: 12,
-                          fontWeight: medium,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+          ChatTile(
+            images: 'assets/images/image_chat.png',
+            nameUser: 'Heartfilia Center',
+            description:
+                'Good night, This item is on item is on This item is on item is on',
+            time: 'Now',
           ),
           Container(
-            margin: EdgeInsets.symmetric(
-              horizontal: defaultMargin
-            ),
+            margin: EdgeInsets.symmetric(horizontal: defaultMargin),
             child: Divider(
               height: 2,
               color: secondaryBlackColor,
