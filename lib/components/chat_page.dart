@@ -27,7 +27,7 @@ class ChatPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    height: 210,
+                    height: MediaQuery.of(context).size.height * 0.27,
                     width: double.infinity,
                     decoration: BoxDecoration(color: pinkOne),
                     child: Column(
