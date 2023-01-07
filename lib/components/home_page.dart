@@ -47,13 +47,10 @@ class HomePage extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                  margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.02,
-                  ),
                   child: TextField(
                     textAlign: TextAlign.start,
                     textAlignVertical: TextAlignVertical.center,
-                    keyboardType: TextInputType.emailAddress,
+                    textInputAction: TextInputAction.search,
                     cursorColor: pinkOne,
                     style: TextStyle(color: blackColor),
                     // obscureText: true,
@@ -79,14 +76,9 @@ class HomePage extends StatelessWidget {
             SizedBox(
               width: 12,
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: 12,
-              ),
-              child: Image.asset(
-                'assets/icons/icon_hamburger_filter.png',
-                width: MediaQuery.of(context).size.width * 0.12,
-              ),
+            Image.asset(
+              'assets/icons/icon_hamburger_filter.png',
+              width: MediaQuery.of(context).size.width * 0.12,
             )
           ],
         ),
@@ -96,7 +88,7 @@ class HomePage extends StatelessWidget {
     Widget imageSlader() {
       return Container(
         margin: EdgeInsets.only(
-            top: MediaQuery.of(context).size.height * 0.04,
+            top: MediaQuery.of(context).size.height * 0.02,
             left: 20,
             right: 20),
         child: Column(
@@ -109,8 +101,8 @@ class HomePage extends StatelessWidget {
                   top: MediaQuery.of(context).size.height * 0.02),
               child: AnimatedContainer(
                 duration: Duration(milliseconds: 15),
-                width: 12,
-                height: 12,
+                width: 8,
+                height: 8,
                 decoration:
                     BoxDecoration(color: pinkOne, shape: BoxShape.circle),
               ),
@@ -123,7 +115,7 @@ class HomePage extends StatelessWidget {
     Widget categories() {
       return Container(
         margin: EdgeInsets.only(
-          top: MediaQuery.of(context).size.height * 0.03,
+          top: MediaQuery.of(context).size.height * 0.02,
         ),
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -131,17 +123,17 @@ class HomePage extends StatelessWidget {
             margin: EdgeInsets.only(left: defaultMargin, right: 2),
             child: Row(
               children: [
-                CategoriesTile(nameCategories: 'All', type: pinkOneStyle),
+                CategoriesTile(nameCategories: 'All', type: pinkOneStyle, weight: semiBold,),
                 CategoriesTile(
-                    nameCategories: 'On Sale', type: grayOneColorStyle),
+                    nameCategories: 'On Sale', type: grayOneColorStyle, weight: medium,),
                 CategoriesTile(
-                    nameCategories: 'Popular', type: grayOneColorStyle),
+                    nameCategories: 'Popular', type: grayOneColorStyle, weight: medium,),
                 CategoriesTile(
-                    nameCategories: 'New arrivals', type: grayOneColorStyle),
+                    nameCategories: 'New arrivals', type: grayOneColorStyle, weight: medium,),
                 CategoriesTile(
-                    nameCategories: 'Package', type: grayOneColorStyle),
+                    nameCategories: 'Package', type: grayOneColorStyle, weight: medium,),
                 CategoriesTile(
-                    nameCategories: 'Health', type: grayOneColorStyle),
+                    nameCategories: 'Health', type: grayOneColorStyle, weight: medium,),
               ],
             ),
           ),
@@ -152,7 +144,7 @@ class HomePage extends StatelessWidget {
     Widget flashSale() {
       return Container(
         margin: EdgeInsets.only(
-            top: MediaQuery.of(context).size.height * 0.03,
+            top: MediaQuery.of(context).size.height * 0.02,
             left: defaultMargin,
             right: defaultMargin),
         child: Row(
@@ -163,7 +155,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   Text('Flash Sale',
                       style: primaryTextStyle.copyWith(
-                          fontSize: 16, fontWeight: semiBold)),
+                          fontSize: 14, fontWeight: semiBold)),
                   SizedBox(
                     width: 12,
                   ),
@@ -172,13 +164,13 @@ class HomePage extends StatelessWidget {
                   Container(
                     alignment: Alignment.center,
                     width: MediaQuery.of(context).size.width * 0.1,
-                    height: 30,
+                    height: 25,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8), color: pinkOne),
                     child: Text(
                       '12',
                       style: backgroundColorStyle.copyWith(
-                          fontSize: 14, fontWeight: semiBold),
+                          fontSize: 12, fontWeight: semiBold),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -188,13 +180,13 @@ class HomePage extends StatelessWidget {
                   Container(
                     alignment: Alignment.center,
                     width: MediaQuery.of(context).size.width * 0.1,
-                    height: 30,
+                    height: 25,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8), color: pinkOne),
                     child: Text(
                       '04',
                       style: backgroundColorStyle.copyWith(
-                          fontSize: 14, fontWeight: semiBold),
+                          fontSize: 12, fontWeight: semiBold),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -204,13 +196,13 @@ class HomePage extends StatelessWidget {
                   Container(
                     alignment: Alignment.center,
                     width: MediaQuery.of(context).size.width * 0.1,
-                    height: 30,
+                    height: 25,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8), color: pinkOne),
                     child: Text(
                       '59',
                       style: backgroundColorStyle.copyWith(
-                          fontSize: 14, fontWeight: semiBold),
+                          fontSize: 12, fontWeight: semiBold),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -270,7 +262,7 @@ class HomePage extends StatelessWidget {
     Widget Populartitle() {
       return Container(
         margin: EdgeInsets.only(
-            top: MediaQuery.of(context).size.height * 0.03,
+            top: MediaQuery.of(context).size.height * 0.01,
             left: defaultMargin,
             right: defaultMargin),
         child: Row(
@@ -279,9 +271,9 @@ class HomePage extends StatelessWidget {
             Container(
               child: Row(
                 children: [
-                  Text('Popular',
+                  Text('Popular Product',
                       style: primaryTextStyle.copyWith(
-                          fontSize: 16, fontWeight: semiBold)),
+                          fontSize: 14, fontWeight: semiBold)),
                   SizedBox(
                     width: 12,
                   ),
@@ -315,7 +307,7 @@ class HomePage extends StatelessWidget {
                 PopularProductTile(
                     images: 'assets/images/product_four.png',
                     categories: 'Ponds',
-                    nameProduct: 'V SHIELD ESSENTIAL SUNSCREEN',
+                    nameProduct: 'UV Shield Essential Sunscreen',
                     price: '\$2.41'),
                 PopularProductTile(
                     images: 'assets/images/product_five.png',
@@ -393,6 +385,7 @@ class HomePage extends StatelessWidget {
     }
 
     return Scaffold(
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         titleSpacing: 0,
         title: Row(
@@ -427,7 +420,7 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    height: 210,
+                    height: MediaQuery.of(context).size.height * 0.27,
                     width: double.infinity,
                     decoration: BoxDecoration(color: pinkOne),
                     child: Column(
@@ -579,30 +572,40 @@ class HomePage extends StatelessWidget {
           onTap: () {
             FocusManager.instance.primaryFocus?.unfocus();
           },
-          child: ListView(
-            padding: EdgeInsets.all(0),
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  searchproduct(),
-                  imageSlader(),
-                  categories(),
-                  flashSale(),
-                  productSale(),
-                  Populartitle(),
-                  popularProduct(),
-                  recommendationtitle(),
-                  recommendationProduct(),
-                  SizedBox(
-                    height: 30,
-                  ),
-                ],
-              ),
-            ],
+          child: RefreshIndicator(
+            color: pinkOne,
+            onRefresh: _refresh,
+            child: ListView(
+              padding: EdgeInsets.all(0),
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    searchproduct(),
+                    imageSlader(),
+                    categories(),
+                    flashSale(),
+                    productSale(),
+                    Populartitle(),
+                    popularProduct(),
+                    recommendationtitle(),
+                    recommendationProduct(),
+                    SizedBox(
+                      height: 30,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
+    );
+  }
+
+  Future<void> _refresh() {
+    return Future.delayed(
+      Duration(seconds: 2)
     );
   }
 }
