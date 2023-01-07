@@ -18,8 +18,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
     return AnimatedContainer(
       margin: EdgeInsets.only(right: 12),
       duration: Duration(milliseconds: 15),
-      width: 12,
-      height: 12,
+      width: 10,
+      height: 10,
       decoration: BoxDecoration(
           color: currentIndex == index ? greenOne : pinkTwo,
           shape: BoxShape.circle),
@@ -66,7 +66,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           child: Text(
                             onBoardingList[index].subtitle,
                             style: primaryTextStyle.copyWith(
-                                fontSize: 16, fontWeight: medium),
+                                fontSize: 14, fontWeight: semiBold),
                           ),
                         ),
                         Container(
