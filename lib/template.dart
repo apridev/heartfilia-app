@@ -12,6 +12,7 @@ Color grayOne = Color(0xffB6B6B6);
 Color grayTwo = Color(0xffC5C5C5);
 Color graythree = Color(0xffEDEDED);
 Color backgroundColor = Color(0xffFFFFFF);
+Color backgroundColorTwo = Color(0xffFCFCFC);
 
 double defaultMargin = 20;
 
