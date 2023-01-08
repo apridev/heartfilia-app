@@ -294,28 +294,32 @@ class HomePage extends StatelessWidget {
       return ScrollConfiguration(
         behavior: ScrollBehavior().copyWith(overscroll: false),
         child: Container(
-          margin: EdgeInsets.only(left: defaultMargin, right: 2),
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                PopularProductTile(
-                    images: 'assets/images/product_three.png',
-                    categories: 'Ponds',
-                    nameProduct: 'Bright Beauty Facial Foam',
-                    price: '\$4.14'),
-                PopularProductTile(
-                    images: 'assets/images/product_four.png',
-                    categories: 'Ponds',
-                    nameProduct: 'UV Shield Essential Sunscreen',
-                    price: '\$2.41'),
-                PopularProductTile(
-                    images: 'assets/images/product_five.png',
-                    categories: 'Wardah Beauty',
-                    nameProduct:
-                        'Wardah Crystal Secret Bright Activating Night Cream',
-                    price: '\$6.52'),
-              ],
+            child: Container(
+              margin: EdgeInsets.only(
+                left: defaultMargin
+              ),
+              child: Row(
+                children: [
+                  PopularProductTile(
+                      images: 'assets/images/product_three.png',
+                      categories: 'Ponds',
+                      nameProduct: 'Bright Beauty Facial Foam',
+                      price: '\$4.14'),
+                  PopularProductTile(
+                      images: 'assets/images/product_four.png',
+                      categories: 'Ponds',
+                      nameProduct: 'UV Shield Essential Sunscreen',
+                      price: '\$2.41'),
+                  PopularProductTile(
+                      images: 'assets/images/product_five.png',
+                      categories: 'Wardah Beauty',
+                      nameProduct:
+                          'Wardah Crystal Secret Bright Activating Night Cream',
+                      price: '\$6.52'),
+                ],
+              ),
             ),
           ),
         ),
@@ -325,7 +329,7 @@ class HomePage extends StatelessWidget {
     Widget recommendationtitle() {
       return Container(
         margin: EdgeInsets.only(
-            top: MediaQuery.of(context).size.height * 0.03,
+            top: MediaQuery.of(context).size.height * 0.01,
             left: defaultMargin,
             right: defaultMargin),
         child: Row(
@@ -336,7 +340,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   Text('Recommendation',
                       style: primaryTextStyle.copyWith(
-                          fontSize: 16, fontWeight: semiBold)),
+                          fontSize: 14, fontWeight: semiBold)),
                   SizedBox(
                     width: 12,
                   ),
@@ -350,36 +354,33 @@ class HomePage extends StatelessWidget {
 
     Widget recommendationProduct() {
       return Container(
-        margin: EdgeInsets.only(left: defaultMargin, right: defaultMargin),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Container(
+            margin: EdgeInsets.only(
+              left: defaultMargin,
+            ),
+            child: Row(
               children: [
                 RecommendationProductTile(
                     images: 'assets/images/product_six.png',
                     categories: 'Wardah Beauty',
-                    nameProduct: 'CRYSTAL SECRET BRIGHTENING DAY CREAM'),
+                    nameProduct: 'Crtstal Secret Brightening Day Cream'),
                 RecommendationProductTile(
                     images: 'assets/images/product_seven.png',
                     categories: 'Wardah Beauty',
-                    nameProduct: 'UV SHIELD AQUA FRESH E...'),
+                    nameProduct: 'UV Shield Aqua Fresh E...'),
+                RecommendationProductTile(
+                    images: 'assets/images/product_seven.png',
+                    categories: 'Wardah Beauty',
+                    nameProduct: 'UV Shield Aqua Fresh E...'),
+                RecommendationProductTile(
+                    images: 'assets/images/product_seven.png',
+                    categories: 'Wardah Beauty',
+                    nameProduct: 'UV Shield Aqua Fresh E...'),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                RecommendationProductTile(
-                    images: 'assets/images/product_one.png',
-                    categories: 'Wardah Beauty',
-                    nameProduct: 'Acnederm Acne Care Serum'),
-                RecommendationProductTile(
-                    images: 'assets/images/product_three.png',
-                    categories: 'Wardah Beauty',
-                    nameProduct: 'Bright Beauty Facial Foam'),
-              ],
-            ),
-          ],
+          ),
         ),
       );
     }
