@@ -5,10 +5,12 @@ class CategoriesTile extends StatelessWidget {
 
   final String nameCategories;
   final TextStyle type;
+  final FontWeight weight;
 
   CategoriesTile({
     required this.nameCategories,
     required this.type,
+    required this.weight,
   });
 
   @override
@@ -21,7 +23,7 @@ class CategoriesTile extends StatelessWidget {
         onTap: () {},
         child: Text(
           nameCategories,
-          style: type.copyWith(fontSize: 14, fontWeight: semiBold),
+          style: type.copyWith(fontSize: 14, fontWeight: weight),
         ),
       ),
     );
