@@ -17,15 +17,15 @@ class RecommendationProductTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-          top: MediaQuery.of(context).size.height * 0.03),
-      width: MediaQuery.of(context).size.width * 0.42,
-      height: MediaQuery.of(context).size.height * 0.29,
+          top: MediaQuery.of(context).size.height * 0.03, right: 12, bottom: 12),
+      width: MediaQuery.of(context).size.width * 0.35,
+      height: MediaQuery.of(context).size.height * 0.25,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 3,
+            spreadRadius: 1,
+            blurRadius: 2,
             offset: Offset(0, 1), // changes position of shadow
           ),
         ],
@@ -37,12 +37,12 @@ class RecommendationProductTile extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.2,
+            height: MediaQuery.of(context).size.height * 0.17,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(12),
                 ),
-                color: pinkThree),
+                color: backgroundColorTwo),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -66,13 +66,13 @@ class RecommendationProductTile extends StatelessWidget {
                       fontSize: 12, fontWeight: medium),
                 ),
                 SizedBox(
-                  height: 6,
+                  height: 4,
                 ),
                 //?? Product Name
                 Text(
                   nameProduct,
                   style: primaryTextStyle.copyWith(
-                      fontSize: 12, fontWeight: medium),
+                      fontSize: 12, fontWeight: semiBold),
                   overflow: TextOverflow.ellipsis,
                 ),
               ],
