@@ -19,15 +19,15 @@ class PopularProductTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-          top: MediaQuery.of(context).size.height * 0.03, right: 18),
-      width: MediaQuery.of(context).size.width * 0.45,
-      height: MediaQuery.of(context).size.height * 0.32,
+          top: MediaQuery.of(context).size.height * 0.02, right: 12, bottom: 12),
+      width: MediaQuery.of(context).size.width * 0.35,
+      height: MediaQuery.of(context).size.height * 0.26,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 3,
+            spreadRadius: 1,
+            blurRadius: 2,
             offset: Offset(0, 1), // changes position of shadow
           ),
         ],
@@ -39,19 +39,19 @@ class PopularProductTile extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.2,
+            height: MediaQuery.of(context).size.height * 0.16,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(12),
                 ),
-                color: pinkThree),
+                color: backgroundColorTwo),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Center(
                     child: Image.asset(
                   images,
-                  width: 150,
+                  width: 130,
                 )),
               ],
             ),
@@ -68,22 +68,22 @@ class PopularProductTile extends StatelessWidget {
                       fontSize: 12, fontWeight: medium),
                 ),
                 SizedBox(
-                  height: 6,
+                  height: 2,
                 ),
                 //?? Product Name
                 Text(
                   nameProduct,
                   style: primaryTextStyle.copyWith(
-                      fontSize: 12, fontWeight: medium),
+                      fontSize: 12, fontWeight: semiBold),
                   overflow: TextOverflow.ellipsis,
                 ),
                 SizedBox(
-                  height: 6,
+                  height: 4,
                 ),
                 Text(
                   price,
                   style: greenColorStyle.copyWith(
-                      fontSize: 14, fontWeight: semiBold),
+                      fontSize: 12, fontWeight: semiBold),
                 ),
               ],
             ),
