@@ -24,17 +24,18 @@ class FlashSaleProductTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-        top: MediaQuery.of(context).size.height * 0.03,
-        right: 18
+        top: MediaQuery.of(context).size.height * 0.02,
+        right: 12,
+        bottom: 12
       ),
-      width: MediaQuery.of(context).size.width * 0.5,
-      height: MediaQuery.of(context).size.height * 0.37,
+      width: MediaQuery.of(context).size.width * 0.4,
+      height: MediaQuery.of(context).size.height * 0.33,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 3,
+            spreadRadius: 1,
+            blurRadius: 2,
             offset: Offset(0, 1), // changes position of shadow
           ),
         ],
@@ -51,107 +52,103 @@ class FlashSaleProductTile extends StatelessWidget {
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(12),
                 ),
-                color: pinkThree),
+                color: backgroundColorTwo),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Center(child: Image.asset(images, width: 160)),
+                Center(child: Image.asset(images, width: MediaQuery.of(context).size.width * 0.40)),
               ],
             ),
           ),
           Container(
               margin: EdgeInsets.only(top: 12, left: 12, right: 12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    categories,
-                    style: grayOneColorStyle.copyWith(
-                        fontSize: 12, fontWeight: medium),
-                  ),
-                  SizedBox(
-                    height: 6,
-                  ),
-                  Text(
-                    nameProduct,
-                    style: primaryTextStyle.copyWith(
-                        fontSize: 14, fontWeight: semiBold),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  SizedBox(
-                    height: 6,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        priceBefore,
-                        style: secondaryBlackStyle.copyWith(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      categories,
+                      style: grayOneColorStyle.copyWith(
+                          fontSize: 12, fontWeight: medium),
+                    ),
+                    Text(
+                      nameProduct,
+                      style: primaryTextStyle.copyWith(
+                          fontSize: 12, fontWeight: semiBold),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          priceBefore,
+                          style: secondaryBlackStyle.copyWith(
+                              fontSize: 12,
+                              fontWeight: medium,
+                              decoration: TextDecoration.lineThrough,
+                              decorationThickness: 4),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Text(
+                          priceAfter,
+                          style: greenColorStyle.copyWith(
                             fontSize: 12,
-                            fontWeight: medium,
-                            decoration: TextDecoration.lineThrough,
-                            decorationThickness: 4),
-                      ),
-                      SizedBox(
-                        width: 6,
-                      ),
-                      Text(
-                        priceAfter,
-                        style: greenColorStyle.copyWith(
-                          fontSize: 14,
-                          fontWeight: bold,
+                            fontWeight: bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 10,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: graythree),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Container(
+                          width: stock,
+                          height: 10,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              color: pinkOne),
                         ),
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Container(
-                    width: double.infinity,
-                    height: 10,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: graythree),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Container(
-                        width: stock,
-                        height: 10,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            color: pinkOne),
-                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        'Remaining',
-                        style: primaryTextStyle.copyWith(
-                            fontSize: 12, fontWeight: medium),
-                      ),
-                      SizedBox(
-                        width: 4,
-                      ),
-                      Text(
-                        qty,
-                        style: primaryTextStyle.copyWith(
-                            fontSize: 12, fontWeight: medium),
-                      ),
-                      SizedBox(
-                        width: 4,
-                      ),
-                      Text(
-                        'pieces',
-                        style: primaryTextStyle.copyWith(
-                            fontSize: 12, fontWeight: medium),
-                      ),
-                    ],
-                  )
-                ],
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'Remaining',
+                          style: primaryTextStyle.copyWith(
+                              fontSize: 12, fontWeight: medium),
+                        ),
+                        SizedBox(
+                          width: 4,
+                        ),
+                        Text(
+                          qty,
+                          style: primaryTextStyle.copyWith(
+                              fontSize: 12, fontWeight: medium),
+                        ),
+                        SizedBox(
+                          width: 4,
+                        ),
+                        Text(
+                          'pieces',
+                          style: primaryTextStyle.copyWith(
+                              fontSize: 12, fontWeight: medium),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               )),
         ],
       ),
