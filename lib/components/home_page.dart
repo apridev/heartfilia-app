@@ -371,13 +371,13 @@ class HomePage extends StatelessWidget {
                     categories: 'Wardah Beauty',
                     nameProduct: 'UV Shield Aqua Fresh E...'),
                 RecommendationProductTile(
-                    images: 'assets/images/product_seven.png',
-                    categories: 'Wardah Beauty',
-                    nameProduct: 'UV Shield Aqua Fresh E...'),
+                    images: 'assets/images/product_three.png',
+                    categories: 'Ponds',
+                    nameProduct: 'Bright Beauty Facial Foam'),
                 RecommendationProductTile(
-                    images: 'assets/images/product_seven.png',
+                    images: 'assets/images/product_eight.png',
                     categories: 'Wardah Beauty',
-                    nameProduct: 'UV Shield Aqua Fresh E...'),
+                    nameProduct: 'CRYSTAL SECRET PURE TR...'),
               ],
             ),
           ),
