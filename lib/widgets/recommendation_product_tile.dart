@@ -43,15 +43,17 @@ class RecommendationProductTile extends StatelessWidget {
                   top: Radius.circular(12),
                 ),
                 color: backgroundColorTwo),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Center(
-                    child: Image.asset(
-                  images,
-                  width: 160,
-                )),
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Center(
+                      child: Image.asset(
+                    images,
+                    width: MediaQuery.of(context).size.width * 0.40,
+                  )),
+                ],
+              ),
             ),
           ),
           Container(
