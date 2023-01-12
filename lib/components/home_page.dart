@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
                             borderSide: BorderSide(color: pinkOne)),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(18),
-                            borderSide: BorderSide(color: grayOne)),
+                            borderSide: BorderSide(color: grayTwo)),
                         // prefixIcon: Icon(Icons.person),
                         prefixIcon: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
