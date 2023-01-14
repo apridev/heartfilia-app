@@ -14,6 +14,8 @@ Color graythree = Color(0xffEDEDED);
 Color backgroundColor = Color(0xffFFFFFF);
 Color backgroundColorTwo = Color(0xffFCFCFC);
 
+double topMargin = 12;
+double bottomMargin = 12;
 double defaultMargin = 20;
 
 TextStyle primaryTextStyle = GoogleFonts.nunito(
