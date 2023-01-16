@@ -11,7 +11,7 @@ class DetailProduct extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Text('Detail Product'),
+            child: Text('Detail Product') ,
           )
         ],
       ),
