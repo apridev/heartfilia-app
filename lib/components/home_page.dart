@@ -48,30 +48,30 @@ class HomePage extends StatelessWidget {
             Expanded(
               child: Container(
                   child: TextField(
-                    textAlign: TextAlign.start,
-                    textAlignVertical: TextAlignVertical.center,
-                    textInputAction: TextInputAction.search,
-                    cursorColor: pinkOne,
-                    style: TextStyle(color: blackColor),
-                    // obscureText: true,
-                    decoration: InputDecoration(
-                        contentPadding: EdgeInsets.all(12),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(18)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(18),
-                            borderSide: BorderSide(color: pinkOne)),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(18),
-                            borderSide: BorderSide(color: grayTwo)),
-                        // prefixIcon: Icon(Icons.person),
-                        prefixIcon: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [Icon(Icons.search)],
-                        ),
-                        hintText: "I’m looking for...",
-                        hintStyle: secondaryBlackStyle.copyWith(fontSize: 14)),
-                  )),
+                textAlign: TextAlign.start,
+                textAlignVertical: TextAlignVertical.center,
+                textInputAction: TextInputAction.search,
+                cursorColor: pinkOne,
+                style: TextStyle(color: blackColor),
+                // obscureText: true,
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.all(12),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(18)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(18),
+                        borderSide: BorderSide(color: pinkOne)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(18),
+                        borderSide: BorderSide(color: grayTwo)),
+                    // prefixIcon: Icon(Icons.person),
+                    prefixIcon: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [Icon(Icons.search)],
+                    ),
+                    hintText: "I’m looking for...",
+                    hintStyle: secondaryBlackStyle.copyWith(fontSize: 14)),
+              )),
             ),
             SizedBox(
               width: 12,
@@ -123,17 +123,36 @@ class HomePage extends StatelessWidget {
             margin: EdgeInsets.only(left: defaultMargin, right: 2),
             child: Row(
               children: [
-                CategoriesTile(nameCategories: 'All', type: pinkOneStyle, weight: semiBold,),
                 CategoriesTile(
-                    nameCategories: 'On Sale', type: grayOneColorStyle, weight: medium,),
+                  nameCategories: 'All',
+                  type: pinkOneStyle,
+                  weight: semiBold,
+                ),
                 CategoriesTile(
-                    nameCategories: 'Popular', type: grayOneColorStyle, weight: medium,),
+                  nameCategories: 'On Sale',
+                  type: grayOneColorStyle,
+                  weight: medium,
+                ),
                 CategoriesTile(
-                    nameCategories: 'New arrivals', type: grayOneColorStyle, weight: medium,),
+                  nameCategories: 'Popular',
+                  type: grayOneColorStyle,
+                  weight: medium,
+                ),
                 CategoriesTile(
-                    nameCategories: 'Package', type: grayOneColorStyle, weight: medium,),
+                  nameCategories: 'New arrivals',
+                  type: grayOneColorStyle,
+                  weight: medium,
+                ),
                 CategoriesTile(
-                    nameCategories: 'Health', type: grayOneColorStyle, weight: medium,),
+                  nameCategories: 'Package',
+                  type: grayOneColorStyle,
+                  weight: medium,
+                ),
+                CategoriesTile(
+                  nameCategories: 'Health',
+                  type: grayOneColorStyle,
+                  weight: medium,
+                ),
               ],
             ),
           ),
@@ -297,9 +316,7 @@ class HomePage extends StatelessWidget {
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Container(
-              margin: EdgeInsets.only(
-                left: defaultMargin
-              ),
+              margin: EdgeInsets.only(left: defaultMargin),
               child: Row(
                 children: [
                   PopularProductTile(
@@ -416,8 +433,8 @@ class HomePage extends StatelessWidget {
           behavior: ScrollBehavior().copyWith(overscroll: false),
           child: ListView(
             padding: EdgeInsets.all(0),
-            children: 
-              [Column(
+            children: [
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
@@ -464,8 +481,8 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    margin:
-                        EdgeInsets.only(left: defaultMargin, right: defaultMargin),
+                    margin: EdgeInsets.only(
+                        left: defaultMargin, right: defaultMargin),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -481,51 +498,45 @@ class HomePage extends StatelessWidget {
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_list_order.png', 
-                          nameProfile: 'List Order'
-                        ),
+                            images: 'assets/icons/icon_profile_list_order.png',
+                            nameProfile: 'List Order'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_wishlist_product.png', 
-                          nameProfile: 'Wishlist Product'
-                        ),
+                            images:
+                                'assets/icons/icon_profile_wishlist_product.png',
+                            nameProfile: 'Wishlist Product'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_reviews.png', 
-                          nameProfile: 'Reviews'
-                        ),
+                            images: 'assets/icons/icon_profile_reviews.png',
+                            nameProfile: 'Reviews'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_categories.png', 
-                          nameProfile: 'Categories'
-                        ),
+                            images: 'assets/icons/icon_profile_categories.png',
+                            nameProfile: 'Categories'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_transaction.png', 
-                          nameProfile: 'Transaction'
-                        ),
+                            images: 'assets/icons/icon_profile_transaction.png',
+                            nameProfile: 'Transaction'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_my_address.png', 
-                          nameProfile: 'My Address'
-                        ),
+                            images: 'assets/icons/icon_profile_my_address.png',
+                            nameProfile: 'My Address'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_voucers.png', 
-                          nameProfile: 'Vouchers'
-                        ),
+                            images: 'assets/icons/icon_profile_voucers.png',
+                            nameProfile: 'Vouchers'),
                         SizedBox(
                           height: 30,
                         ),
@@ -538,23 +549,22 @@ class HomePage extends StatelessWidget {
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_complaint_order.png', 
-                          nameProfile: 'Complaint Order'
-                        ),
+                            images:
+                                'assets/icons/icon_profile_complaint_order.png',
+                            nameProfile: 'Complaint Order'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_help_center.png', 
-                          nameProfile: 'Heartfilia Help Center'
-                        ),
+                            images: 'assets/icons/icon_profile_help_center.png',
+                            nameProfile: 'Heartfilia Help Center'),
                         SizedBox(
                           height: 18,
                         ),
                         MenuProfileTile(
-                          images: 'assets/icons/icon_profile_logout_account.png', 
-                          nameProfile: 'Logout Account'
-                        ),
+                            images:
+                                'assets/icons/icon_profile_logout_account.png',
+                            nameProfile: 'Logout Account'),
                         SizedBox(
                           height: 30,
                         ),
@@ -605,8 +615,6 @@ class HomePage extends StatelessWidget {
   }
 
   Future<void> _refresh() {
-    return Future.delayed(
-      Duration(seconds: 2)
-    );
+    return Future.delayed(Duration(seconds: 2));
   }
 }
