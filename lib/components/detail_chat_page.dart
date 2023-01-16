@@ -11,7 +11,7 @@ class DetailChatPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Text('Datail Chat Page'),
+            child: Text('Datail Chat Page') ,
           )
         ],
       ),
