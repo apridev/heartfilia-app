@@ -410,172 +410,38 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              margin: EdgeInsets.only(left: defaultMargin),
+              margin: EdgeInsets.only(left: defaultMargin,),
               child: Image.asset(
                 'assets/images/heartfilia_home.png',
                 width: MediaQuery.of(context).size.height * 0.1,
               ),
             ),
-            IconButton(
-                onPressed: () {},
-                icon: Image.asset(
-                  'assets/icons/icon_cart.png',
-                  width: 24,
-                )),
+            Container(
+              margin: EdgeInsets.only(
+                right: 10
+              ),
+              child: Row(
+                children: [
+                  IconButton(
+                      onPressed: () {},
+                      icon: Image.asset(
+                        'assets/icons/icon_cart.png',
+                        width: 24,
+                      )),
+                  IconButton(
+                      onPressed: () {},
+                      icon: Image.asset(
+                        'assets/icons/icon_notification.png',
+                        width: 24,
+                      )),
+                ],
+              ),
+            ),
           ],
         ),
         backgroundColor: backgroundColor,
         elevation: 0,
         iconTheme: IconThemeData(color: blackColor),
-      ),
-      endDrawer: Drawer(
-        child: ScrollConfiguration(
-          behavior: ScrollBehavior().copyWith(overscroll: false),
-          child: ListView(
-            padding: EdgeInsets.all(0),
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.27,
-                    width: double.infinity,
-                    decoration: BoxDecoration(color: pinkOne),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ClipOval(
-                          child: Image.asset(
-                            'assets/images/img_profile.png',
-                            width: 80,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 12,
-                        ),
-                        Text(
-                          'Rayna Lipshutz',
-                          style: backgroundColorStyle.copyWith(
-                              fontSize: 14, fontWeight: semiBold),
-                        ),
-                        SizedBox(
-                          height: 8,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              'assets/icons/icon_profile_profile_edit.png',
-                              width: 25,
-                            ),
-                            SizedBox(
-                              width: 8,
-                            ),
-                            Image.asset(
-                              'assets/icons/icon_profile_profile_setting.png',
-                              width: 25,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(
-                        left: defaultMargin, right: defaultMargin),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          'My Activity',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: semiBold),
-                        ),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images: 'assets/icons/icon_profile_list_order.png',
-                            nameProfile: 'List Order'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images:
-                                'assets/icons/icon_profile_wishlist_product.png',
-                            nameProfile: 'Wishlist Product'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images: 'assets/icons/icon_profile_reviews.png',
-                            nameProfile: 'Reviews'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images: 'assets/icons/icon_profile_categories.png',
-                            nameProfile: 'Categories'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images: 'assets/icons/icon_profile_transaction.png',
-                            nameProfile: 'Transaction'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images: 'assets/icons/icon_profile_my_address.png',
-                            nameProfile: 'My Address'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images: 'assets/icons/icon_profile_voucers.png',
-                            nameProfile: 'Vouchers'),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        Text(
-                          'Help Center',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: semiBold),
-                        ),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images:
-                                'assets/icons/icon_profile_complaint_order.png',
-                            nameProfile: 'Complaint Order'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images: 'assets/icons/icon_profile_help_center.png',
-                            nameProfile: 'Heartfilia Help Center'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images:
-                                'assets/icons/icon_profile_logout_account.png',
-                            nameProfile: 'Logout Account'),
-                        SizedBox(
-                          height: 30,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
       ),
       body: ScrollConfiguration(
         behavior: ScrollBehavior().copyWith(overscroll: false),
