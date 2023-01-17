@@ -17,7 +17,7 @@ class CategoriesTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-        right: 18
+        right: defaultMargin
       ),
       child: GestureDetector(
         onTap: () {},
