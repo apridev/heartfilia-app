@@ -43,7 +43,7 @@ class WishlistProductTile extends StatelessWidget {
                     height: MediaQuery.of(context).size.height * 0.09,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: pinkThree,
+                      color: backgroundColorTwo,
                     ),
                     child: Column(
                       children: [Image.asset(images)],
