@@ -9,10 +9,42 @@ class WishlistPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
+        titleSpacing: 0,
         backgroundColor: backgroundColor,
-        title: Text(
-          'Wishlist Product',
-          style: primaryTextStyle.copyWith(fontSize: 14, fontWeight: semiBold),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              margin: EdgeInsets.only(
+                left: defaultMargin
+              ),
+              child: Text(
+                'Wishlist Product',
+                style: primaryTextStyle.copyWith(fontSize: 14, fontWeight: semiBold),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                right: 10
+              ),
+              child: Row(
+                children: [
+                  IconButton(
+                      onPressed: () {},
+                      icon: Image.asset(
+                        'assets/icons/icon_cart.png',
+                        width: 24,
+                      )),
+                  IconButton(
+                      onPressed: () {},
+                      icon: Image.asset(
+                        'assets/icons/icon_notification.png',
+                        width: 24,
+                      )),
+                ],
+              ),
+            ),
+          ],
         ),
         elevation: 0,
         iconTheme: IconThemeData(color: blackColor),
