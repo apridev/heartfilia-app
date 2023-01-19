@@ -12,161 +12,21 @@ class ChatPage extends StatelessWidget {
       backgroundColor: backgroundColor,
       appBar: AppBar(
         backgroundColor: backgroundColor,
-        title: Text(
-          'Your Chat',
-          style: primaryTextStyle.copyWith(fontSize: 14, fontWeight: semiBold),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Your Chat',
+              style: primaryTextStyle.copyWith(fontSize: 14, fontWeight: semiBold),
+            ),
+            IconButton(
+              onPressed: (){}, 
+              icon: Icon(Icons.filter_list)
+            )
+          ],
         ),
         elevation: 0,
         iconTheme: IconThemeData(color: blackColor),
-      ),
-      endDrawer: Drawer(
-        child: ScrollConfiguration(
-          behavior: ScrollBehavior().copyWith(overscroll: false),
-          child: ListView(
-            padding: EdgeInsets.all(0),
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.27,
-                    width: double.infinity,
-                    decoration: BoxDecoration(color: pinkOne),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ClipOval(
-                          child: Image.asset(
-                            'assets/images/img_profile.png',
-                            width: 80,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 12,
-                        ),
-                        Text(
-                          'Rayna Lipshutz',
-                          style: backgroundColorStyle.copyWith(
-                              fontSize: 14, fontWeight: semiBold),
-                        ),
-                        SizedBox(
-                          height: 8,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              'assets/icons/icon_profile_profile_edit.png',
-                              width: 25,
-                            ),
-                            SizedBox(
-                              width: 8,
-                            ),
-                            Image.asset(
-                              'assets/icons/icon_profile_profile_setting.png',
-                              width: 25,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(
-                        left: defaultMargin, right: defaultMargin),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          'My Activity',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: semiBold),
-                        ),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images: 'assets/icons/icon_profile_list_order.png',
-                            nameProfile: 'List Order'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images:
-                                'assets/icons/icon_profile_wishlist_product.png',
-                            nameProfile: 'Wishlist Product'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images: 'assets/icons/icon_profile_reviews.png',
-                            nameProfile: 'Reviews'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images: 'assets/icons/icon_profile_categories.png',
-                            nameProfile: 'Categories'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images: 'assets/icons/icon_profile_transaction.png',
-                            nameProfile: 'Transaction'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images: 'assets/icons/icon_profile_my_address.png',
-                            nameProfile: 'My Address'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images: 'assets/icons/icon_profile_voucers.png',
-                            nameProfile: 'Vouchers'),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        Text(
-                          'Help Center',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: semiBold),
-                        ),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images:
-                                'assets/icons/icon_profile_complaint_order.png',
-                            nameProfile: 'Complaint Order'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images: 'assets/icons/icon_profile_help_center.png',
-                            nameProfile: 'Heartfilia Help Center'),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        MenuProfileTile(
-                            images:
-                                'assets/icons/icon_profile_logout_account.png',
-                            nameProfile: 'Logout Account'),
-                        SizedBox(
-                          height: 30,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
       ),
       // !! Add to Widget
       body: ScrollConfiguration(
@@ -174,27 +34,72 @@ class ChatPage extends StatelessWidget {
         child: RefreshIndicator(
           color: pinkOne,
           onRefresh: _refresh,
-          child: ListView(
-            children: [
-              Column(
-                children: [
-                  ChatTile(
-                    images: 'assets/images/image_chat.png',
-                    nameUser: 'Heartfilia Center',
-                    description:
-                        'Good night, This item is on item is on This item is on item is on',
-                    time: 'Now',
+          child: GestureDetector(
+            onTap: (){
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
+            child: ListView(
+              children: [
+                Column(
+                  children: [
+                    Container(
+                  margin: EdgeInsets.only(left: 20, right: 20),
+                  child: Container(
+            margin: EdgeInsets.only(
+              bottom: 10
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                      child: TextField(
+                    textAlign: TextAlign.start,
+                    textAlignVertical: TextAlignVertical.center,
+                    textInputAction: TextInputAction.search,
+                    cursorColor: pinkOne,
+                    style: TextStyle(color: blackColor),
+                    // obscureText: true,
+                    decoration: InputDecoration(
+                        contentPadding: EdgeInsets.all(12),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18)),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18),
+                            borderSide: BorderSide(color: pinkOne)),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18),
+                            borderSide: BorderSide(color: grayTwo)),
+                        // prefixIcon: Icon(Icons.person),
+                        prefixIcon: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [Icon(Icons.search)],
+                        ),
+                        hintText: "Searching chat...",
+                        hintStyle: secondaryBlackStyle.copyWith(fontSize: 14)),
+                  )),
+                ),
+              ],
+            ),
                   ),
-                  ChatTile(
-                    images: 'assets/images/image_chat.png',
-                    nameUser: 'Heartfilia Center',
-                    description:
-                        'Good night, This item is on item is on This item is on item is on',
-                    time: 'Now',
-                  ),
-                ],
-              ),
-            ],
+                ),
+                    ChatTile(
+                      images: 'assets/images/image_chat.png',
+                      nameUser: 'Heartfilia Center',
+                      description:
+                          'Good night, This item is on item is on This item is on item is on',
+                      time: 'Now',
+                    ),
+                    ChatTile(
+                      images: 'assets/images/image_chat.png',
+                      nameUser: 'Heartfilia Center',
+                      description:
+                          'Good night, This item is on item is on This item is on item is on',
+                      time: 'Now',
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
