@@ -4,7 +4,7 @@ import 'package:heartfilia_app/components/chat_page.dart';
 import 'package:heartfilia_app/components/home_page.dart';
 import 'package:heartfilia_app/components/wishlist_page.dart';
 import 'package:heartfilia_app/home/login_page.dart';
-import 'package:heartfilia_app/home/profile_page.dart';
+import 'package:heartfilia_app/components/profile_page.dart';
 import 'package:heartfilia_app/template.dart';
 
 class NavigationbarPage extends StatefulWidget {
