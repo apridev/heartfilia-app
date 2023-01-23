@@ -4,6 +4,7 @@ import 'package:heartfilia_app/components/calender_page.dart';
 import 'package:heartfilia_app/components/chat_page.dart';
 import 'package:heartfilia_app/components/detail_chat_page.dart';
 import 'package:heartfilia_app/components/home_page.dart';
+import 'package:heartfilia_app/components/test-page.dart';
 import 'package:heartfilia_app/components/wishlist_page.dart';
 import 'package:heartfilia_app/components/navigationbar-page.dart';
 import 'package:heartfilia_app/home/cart-page.dart';
