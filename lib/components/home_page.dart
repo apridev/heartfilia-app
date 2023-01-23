@@ -404,45 +404,6 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: AppBar(
-        titleSpacing: 0,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              margin: EdgeInsets.only(left: defaultMargin,),
-              child: Image.asset(
-                'assets/images/heartfilia_home.png',
-                width: MediaQuery.of(context).size.height * 0.1,
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                right: 10
-              ),
-              child: Row(
-                children: [
-                  IconButton(
-                      onPressed: () {},
-                      icon: Image.asset(
-                        'assets/icons/icon_cart.png',
-                        width: 24,
-                      )),
-                  IconButton(
-                      onPressed: () {},
-                      icon: Image.asset(
-                        'assets/icons/icon_notification.png',
-                        width: 24,
-                      )),
-                ],
-              ),
-            ),
-          ],
-        ),
-        backgroundColor: backgroundColor,
-        elevation: 0,
-        iconTheme: IconThemeData(color: blackColor),
-      ),
       body: ScrollConfiguration(
         behavior: ScrollBehavior().copyWith(overscroll: false),
         child: GestureDetector(
@@ -452,26 +413,59 @@ class HomePage extends StatelessWidget {
           child: RefreshIndicator(
             color: pinkOne,
             onRefresh: _refresh,
-            child: ListView(
-              padding: EdgeInsets.all(0),
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    searchproduct(),
-                    imageSlader(),
-                    categories(),
-                    flashSale(),
-                    productSale(),
-                    Populartitle(),
-                    popularProduct(),
-                    recommendationtitle(),
-                    recommendationProduct(),
-                    SizedBox(
-                      height: 30,
-                    ),
-                  ],
-                ),
+            child: CustomScrollView(
+              slivers: [
+                SliverAppBar(
+                  titleSpacing: 0,
+                    backgroundColor: backgroundColor,
+                    title: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(
+                            left: 20
+                          ),
+                          child: Image.asset(
+                            'assets/images/heartfilia_home.png',
+                            width: MediaQuery.of(context).size.width * 0.2,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(
+                            right: 10
+                          ),
+                          child: Row(
+                            children: [
+                              IconButton(
+                                  onPressed: () {},
+                                  icon: Image.asset('assets/icons/icon_cart.png', width: 24,)),
+                              IconButton(
+                                  onPressed: () {},
+                                  icon: Image.asset('assets/icons/icon_notification.png', width: 24,)),
+                            ],
+                          ),
+                        ),
+                      ],
+                    )),
+                SliverToBoxAdapter(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      searchproduct(),
+                      imageSlader(),
+                      categories(),
+                      flashSale(),
+                      productSale(),
+                      Populartitle(),
+                      popularProduct(),
+                      recommendationtitle(),
+                      recommendationProduct(),
+                      SizedBox(
+                        height: 30,
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),
