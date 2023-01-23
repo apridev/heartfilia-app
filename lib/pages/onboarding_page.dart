@@ -21,7 +21,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       width: 10,
       height: 10,
       decoration: BoxDecoration(
-          color: currentIndex == index ? greenOne : pinkTwo,
+          color: currentIndex == index ? pinkOne : graythree,
           shape: BoxShape.circle),
     );
   }
