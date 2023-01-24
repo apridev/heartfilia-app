@@ -209,7 +209,7 @@ class CalenderPage extends StatelessWidget {
                                 radius: Radius.circular(12),
                                 dashPattern: [10, 5],
                                 child: Container(
-                                  height: MediaQuery.of(context).size.height * 0.1,
+                                  height: MediaQuery.of(context).size.height * 0.08,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(12),
                                       color: backgroundColor),
@@ -224,9 +224,14 @@ class CalenderPage extends StatelessWidget {
                                           style: primaryTextStyle.copyWith(
                                               fontSize: 14, fontWeight: semiBold),
                                         ),
-                                        Image.asset(
-                                          'assets/icons/icon_create_calender.png',
-                                          width: 27,
+                                        GestureDetector(
+                                          onTap: (){
+                                            Navigator.pushNamed(context, '/add-schedule-page');
+                                          },
+                                          child: Image.asset(
+                                            'assets/icons/icon_create_calender.png',
+                                            width: 27,
+                                          ),
                                         )
                                       ],
                                     ),
