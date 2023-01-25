@@ -46,7 +46,9 @@ class ProfilePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/edit-profile-page');
+                    },
                     icon: Image.asset(
                       'assets/icons/icon_setting.png',
                       width: 25,
