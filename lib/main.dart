@@ -4,6 +4,7 @@ import 'package:heartfilia_app/components/add_schedule.dart';
 import 'package:heartfilia_app/components/calender_page.dart';
 import 'package:heartfilia_app/components/chat_page.dart';
 import 'package:heartfilia_app/components/detail_chat_page.dart';
+import 'package:heartfilia_app/components/detail_product.dart';
 import 'package:heartfilia_app/components/edit-profile.dart';
 import 'package:heartfilia_app/components/home_page.dart';
 import 'package:heartfilia_app/components/profile_page.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
         '/chat-page' :(context) => ChatPage(),
         '/wishlist-page' :(context) => WishlistPage(),
         '/cart-page' :(context) => CartPage(),
+        '/detail-product-page' :(context) => DetailProduct(),
         '/detail-chat-page' :(context) => DetailChatPage(),
         '/add-schedule-page' :(context) => AddSchedule(),
         '/edit-profile-page' :(context) => EditProfile(),
