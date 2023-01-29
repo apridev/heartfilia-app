@@ -25,7 +25,6 @@ class ChatPage extends StatelessWidget {
         elevation: 0,
         iconTheme: IconThemeData(color: blackColor),
       ),
-      // !! Add to Widget
       body: ScrollConfiguration(
         behavior: ScrollBehavior().copyWith(overscroll: false),
         child: RefreshIndicator(
