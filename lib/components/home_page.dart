@@ -9,36 +9,6 @@ import 'package:heartfilia_app/widgets/recommendation_product_tile.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Widget headerNav() {
-    //   return Container(
-    //     margin: EdgeInsets.only(top: 30, left: 20, right: 20),
-    //     child: Row(
-    //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //       children: [
-    //         Image.asset(
-    //           'assets/images/heartfilia_home.png',
-    //           width: MediaQuery.of(context).size.width * 0.25,
-    //         ),
-    //         Row(
-    //           children: [
-    //             IconButton(
-    //                 onPressed: () {},
-    //                 icon: Image.asset(
-    //                   'assets/icons/icon_cart.png',
-    //                   width: 24,
-    //                 )),
-    //             IconButton(
-    //                 onPressed: () {},
-    //                 icon: Image.asset(
-    //                   'assets/icons/icon_hamburger.png',
-    //                   width: 24,
-    //                 )),
-    //           ],
-    //         ),
-    //       ],
-    //     ),
-    //   );
-    // }
 
     Widget searchproduct() {
       return Container(
