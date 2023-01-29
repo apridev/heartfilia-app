@@ -176,6 +176,7 @@ class ProfilePage extends StatelessWidget {
                 ListIconsTile(),
                 titleHelpCenter(),
                 ListIconHelpCenterTile(),
+                
                 Container(
                   padding: EdgeInsets.symmetric(
                     vertical: 40
