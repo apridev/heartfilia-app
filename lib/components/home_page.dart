@@ -164,7 +164,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 6,
+                    width: 4,
                   ),
                   Container(
                     alignment: Alignment.center,
@@ -180,7 +180,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 6,
+                    width: 4,
                   ),
                   Container(
                     alignment: Alignment.center,
