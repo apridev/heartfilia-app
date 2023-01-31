@@ -177,6 +177,9 @@ class RegisterPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(18),
                           color: pinkOne),
                       child: TextButton(
+                        style: ButtonStyle(
+                            overlayColor:
+                                MaterialStateProperty.all(Colors.transparent)),
                         onPressed: () {},
                         child: Text(
                           'Register',
