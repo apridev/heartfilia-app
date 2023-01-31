@@ -12,7 +12,7 @@ class LoginPage extends StatelessWidget {
       body: ScrollConfiguration(
         behavior: ScrollBehavior().copyWith(overscroll: false),
         child: GestureDetector(
-          onTap: (){
+          onTap: () {
             FocusManager.instance.primaryFocus?.unfocus();
           },
           child: ListView(
@@ -22,8 +22,7 @@ class LoginPage extends StatelessWidget {
                 children: [
                   Container(
                     margin: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * 0.04
-                    ),
+                        top: MediaQuery.of(context).size.height * 0.04),
                     child: Center(
                         child: Image.asset(
                       'assets/images/skincare_login.png',
@@ -89,7 +88,7 @@ class LoginPage extends StatelessWidget {
                             hintStyle:
                                 secondaryBlackStyle.copyWith(fontSize: 14)),
                       )),
-                      //?? Password input
+                  //?? Password input
                   Container(
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.03,
@@ -125,7 +124,10 @@ class LoginPage extends StatelessWidget {
                             suffixIcon: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Image.asset('assets/icons/icon_eye_hidden.png', height: 22,),
+                                Image.asset(
+                                  'assets/icons/icon_eye_hidden.png',
+                                  height: 22,
+                                ),
                               ],
                             ),
                             hintText: "6-10 Characters of number or letters",
@@ -171,7 +173,8 @@ class LoginPage extends StatelessWidget {
                                           Text(
                                             'Don’t worry! It happens. Please enter the address associeted with your account.',
                                             style: secondaryBlackStyle.copyWith(
-                                                fontSize: 14, fontWeight: medium),
+                                                fontSize: 14,
+                                                fontWeight: medium),
                                           ),
                                           Container(
                                             margin: EdgeInsets.only(
@@ -184,10 +187,11 @@ class LoginPage extends StatelessWidget {
                                               children: [
                                                 Image.asset(
                                                     'assets/icons/icon_email.png',
-                                                    width: MediaQuery.of(context)
-                                                            .size
-                                                            .width *
-                                                        0.06,
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width *
+                                                            0.06,
                                                     color: blackColor),
                                                 SizedBox(
                                                   width: 12,
@@ -196,9 +200,10 @@ class LoginPage extends StatelessWidget {
                                                     child: TextField(
                                                   cursorColor: pinkOne,
                                                   decoration: InputDecoration(
-                                                    hintText: 'Email / Username',
-                                                    hintStyle:
-                                                        primaryTextStyle.copyWith(
+                                                    hintText:
+                                                        'Email / Username',
+                                                    hintStyle: primaryTextStyle
+                                                        .copyWith(
                                                             fontSize: 14,
                                                             fontWeight: medium),
                                                   ),
@@ -223,6 +228,11 @@ class LoginPage extends StatelessWidget {
                                                       BorderRadius.circular(18),
                                                   color: pinkOne),
                                               child: TextButton(
+                                                style: ButtonStyle(
+                                                    overlayColor:
+                                                        MaterialStateProperty
+                                                            .all(Colors
+                                                                .transparent)),
                                                 onPressed: () {},
                                                 child: Text(
                                                   'Submit',
@@ -236,12 +246,17 @@ class LoginPage extends StatelessWidget {
                                           ),
                                           Container(
                                             margin: EdgeInsets.only(
-                                              top: MediaQuery.of(context).size.height * 0.04
-                                            ),
-                                            child: Text('We have sent a password reset message to your email. Please check your email.', style: secondaryBlackStyle.copyWith(
-                                              fontSize: 14,
-                                              fontWeight: medium
-                                            ), textAlign: TextAlign.center,
+                                                top: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.04),
+                                            child: Text(
+                                              'We have sent a password reset message to your email. Please check your email.',
+                                              style:
+                                                  secondaryBlackStyle.copyWith(
+                                                      fontSize: 14,
+                                                      fontWeight: medium),
+                                              textAlign: TextAlign.center,
                                             ),
                                           ),
                                           SizedBox(
@@ -273,6 +288,9 @@ class LoginPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(18),
                           color: pinkOne),
                       child: TextButton(
+                        style: ButtonStyle(
+                            overlayColor:
+                                MaterialStateProperty.all(Colors.transparent)),
                         onPressed: () {
                           Navigator.pushNamed(context, '/verification-page');
                         },
