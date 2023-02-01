@@ -83,106 +83,110 @@ class _OnboardingPageState extends State<OnboardingPage> {
               ),
             ),
             Expanded(
-              flex: 9,
-              child: Column(
-                children: [
-                  Container(
-              margin: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height * 0.05),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(
-                    onBoardingList.length, (index) => dotIndikator(index)),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height * 0.03),
-              child: Text(
-                'Login and register are free',
-                style:
-                    primaryTextStyle.copyWith(fontSize: 14, fontWeight: medium),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 30),
-              padding: EdgeInsets.symmetric(horizontal: 12),
-              decoration: BoxDecoration(
-                  color: pinkOne, borderRadius: BorderRadius.circular(12)),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pushNamedAndRemoveUntil(
-                      context, '/login-page', (route) => false);
-                },
-                child: Text(
-                  'Continue with Mobile Number',
-                  style: backgroundColorStyle.copyWith(
-                      fontSize: 14, fontWeight: medium),
-                ),
-              ),
-            ),
-            Container(
-                margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                child: Image.asset('assets/images/or_account.png')),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    height: MediaQuery.of(context).size.height * 0.05,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: grayOne, width: 1)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/icons/icon_google.png',
-                          width: 24,
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Text(
-                          'Google',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: medium),
-                        )
-                      ],
+                flex: 9,
+                child: Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.05),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(onBoardingList.length,
+                            (index) => dotIndikator(index)),
+                      ),
                     ),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    height: MediaQuery.of(context).size.height * 0.05,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: grayOne, width: 1)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/icons/icon_facebook.png',
-                          width: 22,
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Text(
-                          'Facebook',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: medium),
-                        )
-                      ],
+                    Container(
+                      margin: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.03),
+                      child: Text(
+                        'Login and register are free',
+                        style: primaryTextStyle.copyWith(
+                            fontSize: 14, fontWeight: medium),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-                ],
-              )
-            )
+                    Container(
+                      margin: EdgeInsets.only(top: 30),
+                      padding: EdgeInsets.symmetric(horizontal: 12),
+                      decoration: BoxDecoration(
+                          color: pinkOne,
+                          borderRadius: BorderRadius.circular(12)),
+                      child: TextButton(
+                        style: ButtonStyle(
+                            overlayColor:
+                                MaterialStateProperty.all(Colors.transparent)),
+                        onPressed: () {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, '/login-page', (route) => false);
+                        },
+                        child: Text(
+                          'Continue with Mobile Number',
+                          style: backgroundColorStyle.copyWith(
+                              fontSize: 14, fontWeight: medium),
+                        ),
+                      ),
+                    ),
+                    Container(
+                        margin:
+                            EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                        child: Image.asset('assets/images/or_account.png')),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 30),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.4,
+                            height: MediaQuery.of(context).size.height * 0.05,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12),
+                                border: Border.all(color: grayOne, width: 1)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/icons/icon_google.png',
+                                  width: 24,
+                                ),
+                                SizedBox(
+                                  width: 6,
+                                ),
+                                Text(
+                                  'Google',
+                                  style: primaryTextStyle.copyWith(
+                                      fontSize: 14, fontWeight: medium),
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.4,
+                            height: MediaQuery.of(context).size.height * 0.05,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12),
+                                border: Border.all(color: grayOne, width: 1)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/icons/icon_facebook.png',
+                                  width: 22,
+                                ),
+                                SizedBox(
+                                  width: 6,
+                                ),
+                                Text(
+                                  'Facebook',
+                                  style: primaryTextStyle.copyWith(
+                                      fontSize: 14, fontWeight: medium),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ))
           ],
         )),
       ),
