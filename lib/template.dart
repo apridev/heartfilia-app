@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 Color blackColor = Color(0xff342B38);
 Color secondaryBlackColor = Color(0xff535353);
-Color pinkOne = Color(0xffF89E9E);
+Color pinkOne = Color(0xffEE6983);
 Color pinkTwo = Color(0xffFFAFAF);
 Color pinkThree = Color(0xffFAEFF1);
 Color greenOne = Color(0xff8ADDAE);
