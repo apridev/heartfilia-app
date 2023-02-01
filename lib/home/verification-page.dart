@@ -141,6 +141,9 @@ class VerificationPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(18),
                         color: pinkOne),
                     child: TextButton(
+                      style: ButtonStyle(
+                            overlayColor:
+                                MaterialStateProperty.all(Colors.transparent)),
                       onPressed: () {
                         Navigator.pushNamedAndRemoveUntil(context, '/navigationbar-page', (route) => false);
                       },
