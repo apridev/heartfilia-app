@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:heartfilia_app/expanded-tile.dart';
 import 'package:heartfilia_app/template.dart';
+import 'package:heartfilia_app/widgets/variant_tile.dart';
 
 class DetailProduct extends StatelessWidget {
   @override
@@ -156,7 +157,37 @@ class DetailProduct extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Expandedtile(text: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet."),
+                      Expandedtile(
+                          text:
+                              "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet."),
+                      SizedBox(
+                        height: 12,
+                      ),
+                      Text(
+                        'Variant',
+                        style: primaryTextStyle.copyWith(
+                            fontSize: 14, fontWeight: semiBold),
+                      ),
+                      SizedBox(
+                        height: 12,
+                      ),
+                      Row(
+                        children: [
+                          VariantTile(
+                            name: 'Day Cream', 
+                            color: pinkOneStyle,
+                            border: pinkOne,
+                          ),
+                          VariantTile(
+                            name: 'Day Cream 15ml', 
+                            color: secondaryBlackStyle,
+                            border: grayOne,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
                     ],
                   ),
                 ),
@@ -177,8 +208,7 @@ class DetailProduct extends StatelessWidget {
           ),
         ]),
         child: Container(
-          margin:
-              EdgeInsets.only(left: defaultMargin, right: defaultMargin),
+          margin: EdgeInsets.only(left: defaultMargin, right: defaultMargin),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -203,10 +233,7 @@ class DetailProduct extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.05,
                 decoration: BoxDecoration(
                     color: backgroundColor,
-                    border: Border.all(
-                      color: pinkOne,
-                      width: 1.2
-                    ),
+                    border: Border.all(color: pinkOne, width: 1.2),
                     borderRadius: BorderRadius.circular(8)),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -222,16 +249,14 @@ class DetailProduct extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.6,
                 height: MediaQuery.of(context).size.height * 0.05,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: pinkOne
-                ),
+                    borderRadius: BorderRadius.circular(12), color: pinkOne),
                 child: TextButton(
-                  onPressed: (){}, 
-                  child: Text('Checkout', style: backgroundColorStyle.copyWith(
-                    fontSize: 14,
-                    fontWeight: medium
-                  ),)
-                ),
+                    onPressed: () {},
+                    child: Text(
+                      'Checkout',
+                      style: backgroundColorStyle.copyWith(
+                          fontSize: 14, fontWeight: medium),
+                    )),
               ),
             ],
           ),
