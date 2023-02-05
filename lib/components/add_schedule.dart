@@ -6,12 +6,14 @@ class AddSchedule extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(child: Text('Add Schedule')
-          )
-        ],
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(child: Text('Add Schedule')
+            )
+          ],
+        ),
       ),
     );
   }
