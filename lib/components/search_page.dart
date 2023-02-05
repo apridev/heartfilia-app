@@ -7,12 +7,16 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Text('Search Page'),
-          )
+      body: ListView(
+        children: 
+          [Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Text('Search Page'),
+              )
+            ],
+          ),
         ],
       ),
     );
