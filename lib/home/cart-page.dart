@@ -28,10 +28,11 @@ class CartPage extends StatelessWidget {
                         width: 24,
                       )),
                 ),
-                Text('Cart', style: primaryTextStyle.copyWith(
-                  fontSize: 14,
-                  fontWeight: semiBold
-                ),),
+                Text(
+                  'Cart',
+                  style: primaryTextStyle.copyWith(
+                      fontSize: 14, fontWeight: semiBold),
+                ),
                 Container(
                   child: IconButton(
                       onPressed: () {},
@@ -40,7 +41,71 @@ class CartPage extends StatelessWidget {
                         width: 24,
                       )),
                 ),
-                
+              ],
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(
+                      top: 10, left: defaultMargin, right: defaultMargin),
+                  width: double.infinity,
+                  height: 85,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: backgroundColor,
+                      border: Border.all(color: grayTwo)),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.22,
+                        color: pinkOne,
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              Image.asset('assets/images/product_five.png', width: MediaQuery.of(context).size.width * 0.22,)
+                            ],
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 12
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Categories', style: secondaryBlackStyle.copyWith(
+                                fontSize: 12,
+                                fontWeight: medium
+                              ),),
+                              SizedBox(
+                                height: 4,
+                              ),
+                              Text('Crystal Secret Brightening Day Cream Brightening Day Cream Crystal Secret Brightening Day Cream Brightening Day Cream', style: primaryTextStyle.copyWith(
+                                fontSize: 12,
+                                fontWeight: semiBold,
+                              ),
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              ),
+                              SizedBox(
+                                height: 4,
+                              ),
+                              Text('Price', style: greenColorStyle.copyWith(
+                                fontSize: 14,
+                                fontWeight: semiBold
+                              ),)
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
