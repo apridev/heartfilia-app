@@ -54,9 +54,7 @@ TextStyle greenColorStyle = GoogleFonts.nunito(
   color: greenOne
 );
 
-TextStyle greenTwoColorStyle = GoogleFonts.nunito(
-  color: greenTwo
-);
+
 
 
 FontWeight regular = FontWeight.w400;
