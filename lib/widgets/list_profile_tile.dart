@@ -32,7 +32,7 @@ class ListProfileTile extends StatelessWidget {
               Text(
                 nameIcons,
                 style:
-                    primaryTextStyle.copyWith(fontSize: 12, fontWeight: medium),
+                    primaryTextStyle.copyWith(fontSize: 14, fontWeight: medium),
               )
             ],
           ),
