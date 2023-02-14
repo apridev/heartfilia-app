@@ -36,7 +36,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                   Text(
                     'raynaKorsgaard@gmail.com',
-                    style: secondaryBlackStyle.copyWith(fontSize: 12),
+                    style: secondaryBlackStyle.copyWith(fontSize: 14),
                     overflow: TextOverflow.ellipsis,
                   )
                 ],
