@@ -23,6 +23,9 @@ class VariantTile extends StatelessWidget {
           border: Border.all(color: border),
           borderRadius: BorderRadius.circular(12)),
       child: TextButton(
+        style: ButtonStyle(
+          overlayColor: MaterialStateProperty.all(Colors.transparent)
+        ),
           onPressed: () {},
           child: Text(
             name,
