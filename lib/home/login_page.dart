@@ -198,8 +198,11 @@ class LoginPage extends StatelessWidget {
                                                 ),
                                                 Expanded(
                                                     child: TextField(
+                                                      keyboardType: TextInputType.emailAddress,
+                                                      autofocus: true,
                                                   cursorColor: pinkOne,
                                                   decoration: InputDecoration(
+                                                    focusColor: pinkOne,
                                                     hintText:
                                                         'Email / Username',
                                                     hintStyle: primaryTextStyle
