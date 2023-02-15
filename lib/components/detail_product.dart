@@ -41,7 +41,8 @@ class DetailProduct extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * 0.12,
                             ),
                           ),
-                          Image.asset('assets/icons/icon_like_detail_product.png',
+                          Image.asset(
+                              'assets/icons/icon_like_detail_product.png',
                               width: MediaQuery.of(context).size.width * 0.12),
                         ],
                       ),
@@ -123,13 +124,17 @@ class DetailProduct extends StatelessWidget {
                             Container(
                               child: Row(
                                 children: [
-                                  Image.asset('assets/icons/icon_star_active.png',
+                                  Image.asset(
+                                      'assets/icons/icon_star_active.png',
                                       width: 20),
-                                  Image.asset('assets/icons/icon_star_active.png',
+                                  Image.asset(
+                                      'assets/icons/icon_star_active.png',
                                       width: 20),
-                                  Image.asset('assets/icons/icon_star_active.png',
+                                  Image.asset(
+                                      'assets/icons/icon_star_active.png',
                                       width: 20),
-                                  Image.asset('assets/icons/icon_star_active.png',
+                                  Image.asset(
+                                      'assets/icons/icon_star_active.png',
                                       width: 20),
                                   Image.asset('assets/icons/icon_star.png',
                                       width: 20),
@@ -176,19 +181,19 @@ class DetailProduct extends StatelessWidget {
                         Row(
                           children: [
                             VariantTile(
-                              name: 'Day Cream', 
+                              name: 'Day Cream',
                               color: pinkOneStyle,
                               border: pinkOne,
                             ),
                             VariantTile(
-                              name: 'Day Cream 15ml', 
+                              name: 'Day Cream 15ml',
                               color: secondaryBlackStyle,
                               border: grayOne,
                             ),
                           ],
                         ),
                         SizedBox(
-                          height: 30,
+                          height: 20,
                         ),
                       ],
                     ),
@@ -241,9 +246,200 @@ class DetailProduct extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      'assets/icons/icon_cart_detail_product.png',
-                      width: 24,
+                    GestureDetector(
+                      onTap: () {
+                        showModalBottomSheet(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.4,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              top: 10, left: 10),
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.10,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.20,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                              color: pinkThree,
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      'assets/images/product_four.png'),
+                                                  fit: BoxFit.fill)),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(left: 12),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                '\$18.00',
+                                                style:
+                                                    primaryTextStyle.copyWith(
+                                                        fontSize: 12,
+                                                        fontWeight: semiBold),
+                                              ),
+                                              SizedBox(
+                                                height: 8,
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Text(
+                                                    'Quantity:',
+                                                    style: primaryTextStyle
+                                                        .copyWith(
+                                                            fontSize: 14,
+                                                            fontWeight: medium),
+                                                  ),
+                                                  Text(
+                                                    '1231',
+                                                    style: primaryTextStyle
+                                                        .copyWith(
+                                                            fontSize: 14,
+                                                            fontWeight: medium),
+                                                  )
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Container(
+                                        margin: EdgeInsets.only(
+                                            left: 10,
+                                            top: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.030),
+                                        child: Text(
+                                          'Variant',
+                                          style: primaryTextStyle.copyWith(
+                                              fontSize: 14, fontWeight: medium),
+                                        )),
+                                    Container(
+                                      margin: EdgeInsets.only(
+                                          left: 10, right: 10, top: 15),
+                                      child: Row(
+                                        children: [
+                                          VariantTile(
+                                            name: 'Day Cream',
+                                            color: pinkOneStyle,
+                                            border: pinkOne,
+                                          ),
+                                          VariantTile(
+                                            name: 'Day Cream 15ml',
+                                            color: secondaryBlackStyle,
+                                            border: grayOne,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                        margin: EdgeInsets.only(
+                                            left: 10,
+                                            right: 10,
+                                            top: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.020),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              'Total Product',
+                                              style: primaryTextStyle.copyWith(
+                                                  fontSize: 14,
+                                                  fontWeight: medium),
+                                            ),
+                                            Container(
+                                              child: Row(
+                                                children: [
+                                                  Image.asset(
+                                                    'assets/icons/icons_min_cart.png',
+                                                    width: 24,
+                                                  ),
+                                                  SizedBox(
+                                                    width: 12,
+                                                  ),
+                                                  Text(
+                                                    '1',
+                                                    style: primaryTextStyle
+                                                        .copyWith(
+                                                            fontSize: 14,
+                                                            fontWeight: medium),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 12,
+                                                  ),
+                                                  Image.asset(
+                                                    'assets/icons/icons_plus_cart.png',
+                                                    width: 24,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        )),
+                                    Container(
+                                      margin: EdgeInsets.only(
+                                          top: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.03),
+                                      child: Container(
+                                        margin: EdgeInsets.symmetric(
+                                            horizontal: 10),
+                                        width: double.infinity,
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                0.07,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            color: pinkOne),
+                                        child: TextButton(
+                                          style: ButtonStyle(
+                                              overlayColor:
+                                                  MaterialStateProperty.all(
+                                                      Colors.transparent)),
+                                          onPressed: () {
+                                            Navigator.pushNamed(
+                                                context, '/verification-page');
+                                          },
+                                          child: Text(
+                                            'Login',
+                                            style:
+                                                backgroundColorStyle.copyWith(
+                                                    fontSize: 14,
+                                                    fontWeight: medium),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            });
+                      },
+                      child: Image.asset(
+                        'assets/icons/icon_cart_detail_product.png',
+                        width: 24,
+                      ),
                     )
                   ],
                 ),
@@ -254,9 +450,10 @@ class DetailProduct extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12), color: pinkOne),
                 child: TextButton(
-                  style: ButtonStyle(
-                    overlayColor: MaterialStateProperty.all(Colors.transparent),
-                  ),
+                    style: ButtonStyle(
+                      overlayColor:
+                          MaterialStateProperty.all(Colors.transparent),
+                    ),
                     onPressed: () {},
                     child: Text(
                       'Checkout',
