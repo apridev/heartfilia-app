@@ -62,7 +62,7 @@ class ProductCartTile extends StatelessWidget {
                   Text(
                     '\$18.1',
                     style: greenColorStyle.copyWith(
-                        fontSize: 14, fontWeight: semiBold),
+                        fontSize: 12, fontWeight: semiBold),
                   )
                 ],
               ),
