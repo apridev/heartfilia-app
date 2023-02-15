@@ -99,7 +99,7 @@ class DetailProduct extends StatelessWidget {
                                   '\$28.99',
                                   style: primaryTextStyle.copyWith(
                                       fontSize: 12,
-                                      fontWeight: medium,
+                                      fontWeight: semiBold,
                                       decoration: TextDecoration.lineThrough,
                                       decorationThickness: 4),
                                 ),
