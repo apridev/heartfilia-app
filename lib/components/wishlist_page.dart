@@ -31,7 +31,9 @@ class WishlistPage extends StatelessWidget {
                       child: Row(
                         children: [
                           IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/cart-page');
+                              },
                               icon: Image.asset(
                                 'assets/icons/icon_cart.png',
                                 width: 24,
