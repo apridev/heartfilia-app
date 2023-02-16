@@ -81,20 +81,6 @@ class _NavigationbarPageState extends State<NavigationbarPage> {
                   padding: EdgeInsets.only(top: 12),
                   child: currentIndex == 3
                       ? Image.asset(
-                          'assets/icons/icon_chat_active.png',
-                          width: MediaQuery.of(context).size.width * 0.07,
-                        )
-                      : Image.asset(
-                          'assets/icons/icon_chat.png',
-                          width: MediaQuery.of(context).size.width * 0.07,
-                        ),
-                ),
-                label: ''),
-            BottomNavigationBarItem(
-                icon: Container(
-                  padding: EdgeInsets.only(top: 12),
-                  child: currentIndex == 4
-                      ? Image.asset(
                           'assets/icons/icon_profile_active.png',
                           width: MediaQuery.of(context).size.width * 0.07,
                         )
@@ -121,9 +107,6 @@ class _NavigationbarPageState extends State<NavigationbarPage> {
           return WishlistPage();
           break;
         case 3:
-          return ChatPage();
-          break;
-        case 4:
           return ProfilePage();
           break;
         default:
