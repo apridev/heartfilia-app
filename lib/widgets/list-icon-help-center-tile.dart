@@ -7,9 +7,14 @@ class ListIconHelpCenterTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ListProfileTile(
-          icons: 'assets/icons/icon_profile_complaint_order.png', 
-          nameIcons: 'Complaint order'
+        GestureDetector(
+          onTap: (){
+            Navigator.pushNamed(context, '/chat-page');
+          },
+          child: ListProfileTile(
+            icons: 'assets/icons/icon_profile_complaint_order.png', 
+            nameIcons: 'Complaint order'
+          ),
         ),
         ListProfileTile(
           icons: 'assets/icons/icon_profile_help_center.png', 
