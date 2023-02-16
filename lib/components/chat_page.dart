@@ -16,7 +16,7 @@ class ChatPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Your Chat',
+              'Complaint Order',
               style:
                   primaryTextStyle.copyWith(fontSize: 14, fontWeight: semiBold),
             ),
