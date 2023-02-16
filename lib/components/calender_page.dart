@@ -16,18 +16,15 @@ class CalenderPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              margin: EdgeInsets.only(
-                left: defaultMargin
-              ),
+              margin: EdgeInsets.only(left: defaultMargin),
               child: Text(
                 'Daily Schedule',
-                style: primaryTextStyle.copyWith(fontSize: 14, fontWeight: semiBold),
+                style: primaryTextStyle.copyWith(
+                    fontSize: 14, fontWeight: semiBold),
               ),
             ),
             Container(
-              margin: EdgeInsets.only(
-                right: 10
-              ),
+              margin: EdgeInsets.only(right: 10),
               child: Row(
                 children: [
                   IconButton(
@@ -58,19 +55,20 @@ class CalenderPage extends StatelessWidget {
           color: pinkOne,
           onRefresh: _refresh,
           child: ListView(
-            children: 
-              [Column(
+            children: [
+              Column(
                 children: [
                   // !!don't fixed automatic
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       IconButton(
-                          onPressed: () {}, icon: Icon(Icons.arrow_back_ios_rounded)),
+                          onPressed: () {},
+                          icon: Icon(Icons.arrow_back_ios_rounded)),
                       Text(
                         'August',
-                        style:
-                            primaryTextStyle.copyWith(fontSize: 14, fontWeight: medium),
+                        style: primaryTextStyle.copyWith(
+                            fontSize: 14, fontWeight: medium),
                       ),
                       IconButton(
                           onPressed: () {},
@@ -132,8 +130,8 @@ class CalenderPage extends StatelessWidget {
                         Container(
                             width: 30,
                             height: 30,
-                            decoration:
-                                BoxDecoration(shape: BoxShape.circle, color: greenOne),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle, color: greenOne),
                             child: Center(
                               child: Text(
                                 '11',
@@ -145,8 +143,8 @@ class CalenderPage extends StatelessWidget {
                         Container(
                             width: 30,
                             height: 30,
-                            decoration:
-                                BoxDecoration(shape: BoxShape.circle, color: greenOne),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle, color: greenOne),
                             child: Center(
                               child: Text(
                                 '12',
@@ -211,24 +209,29 @@ class CalenderPage extends StatelessWidget {
                                 radius: Radius.circular(12),
                                 dashPattern: [10, 5],
                                 child: Container(
-                                  height: MediaQuery.of(context).size.height * 0.08,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.08,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(12),
                                       color: backgroundColor),
                                   child: Container(
                                     margin: EdgeInsets.only(
-                                        left: defaultMargin, right: defaultMargin),
+                                        left: defaultMargin,
+                                        right: defaultMargin),
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
                                           'Add step / product',
                                           style: primaryTextStyle.copyWith(
-                                              fontSize: 14, fontWeight: semiBold),
+                                              fontSize: 14,
+                                              fontWeight: semiBold),
                                         ),
                                         GestureDetector(
-                                          onTap: (){
-                                            Navigator.pushNamed(context, '/add-schedule-page');
+                                          onTap: () {
+                                            Navigator.pushNamed(
+                                                context, '/add-schedule-page');
                                           },
                                           child: Image.asset(
                                             'assets/icons/icon_create_calender.png',
@@ -250,14 +253,16 @@ class CalenderPage extends StatelessWidget {
                               DailyScheduleTile(
                                 images: 'assets/images/image_sun.png',
                                 categories: 'Toner',
-                                name: "Kiehl's Calendula Herbal Extract Alcohol...",
+                                name:
+                                    "Kiehl's Calendula Herbal Extract Alcohol...",
                                 checkMode: "assets/icons/icon_checklist_on.png",
                               ),
                               DailyScheduleTile(
                                 images: 'assets/images/image_moon.png',
                                 categories: 'Clenser',
                                 name: "Garnier Micellar Cleansing Water Pink ",
-                                checkMode: "assets/icons/icon_checklist_off.png",
+                                checkMode:
+                                    "assets/icons/icon_checklist_off.png",
                               ),
                             ],
                           ),
@@ -275,8 +280,6 @@ class CalenderPage extends StatelessWidget {
   }
 
   Future<void> _refresh() {
-    return Future.delayed(
-      Duration(seconds: 2)
-    );
+    return Future.delayed(Duration(seconds: 2));
   }
 }
