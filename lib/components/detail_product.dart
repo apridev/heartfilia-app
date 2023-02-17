@@ -422,7 +422,7 @@ class DetailProduct extends StatelessWidget {
                                                 context, '/verification-page');
                                           },
                                           child: Text(
-                                            'Login',
+                                            'Add to cart',
                                             style:
                                                 backgroundColorStyle.copyWith(
                                                     fontSize: 14,
