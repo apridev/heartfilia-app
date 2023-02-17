@@ -3,60 +3,251 @@ import 'package:heartfilia_app/template.dart';
 import 'package:heartfilia_app/widgets/product_cart_tile.dart';
 
 class CartPage extends StatelessWidget {
-  const CartPage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
       body: ScrollConfiguration(
         behavior: ScrollBehavior().copyWith(overscroll: false),
-        child: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              automaticallyImplyLeading: false,
-              backgroundColor: backgroundColor,
-              titleSpacing: 0,
-              elevation: 0,
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    child: IconButton(
+        child: GestureDetector(
+          onTap: () {
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          child: CustomScrollView(
+            slivers: [
+              SliverAppBar(
+                automaticallyImplyLeading: false,
+                backgroundColor: backgroundColor,
+                titleSpacing: 0,
+                elevation: 0,
+                title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: Image.asset(
+                            'assets/icons/icons_arrow_left_cart.png',
+                            width: 24,
+                          )),
+                    ),
+                    Text(
+                      'Cart',
+                      style: primaryTextStyle.copyWith(
+                          fontSize: 14, fontWeight: semiBold),
+                    ),
+                    Container(
+                      child: IconButton(
+                          onPressed: () {},
+                          icon: Image.asset(
+                            'assets/icons/icon_options_cart.png',
+                            width: 24,
+                          )),
+                    ),
+                  ],
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: Column(
+                  children: [
+                    ProductCartTile(),
+                    ProductCartTile(),
+                    ProductCartTile(),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      resizeToAvoidBottomInset: false,
+      bottomNavigationBar: GestureDetector(
+        onTap: () {
+          FocusManager.instance.primaryFocus?.unfocus();
+        },
+        child: Container(
+          height: MediaQuery.of(context).size.height * 0.45,
+          width: double.infinity,
+          decoration: BoxDecoration(color: backgroundColor, boxShadow: [
+            BoxShadow(
+              color: grayTwo,
+              spreadRadius: 1,
+              blurRadius: 2,
+              offset: Offset(0, 1), // changes position of shadow
+            ),
+          ]),
+          child: Column(
+            children: [
+              SizedBox(
+                height: defaultMargin,
+              ),
+              Container(
+                  margin: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height * 0.01,
+                      left: defaultMargin,
+                      right: defaultMargin),
+                  child: TextField(
+                    textAlign: TextAlign.start,
+                    textAlignVertical: TextAlignVertical.center,
+                    keyboardType: TextInputType.emailAddress,
+                    cursorColor: grayOne,
+                    style: TextStyle(color: blackColor),
+                    // obscureText: true,
+                    decoration: InputDecoration(
+                        contentPadding: EdgeInsets.zero,
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18)),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18),
+                            borderSide: BorderSide(color: grayTwo)),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18),
+                            borderSide: BorderSide(color: Colors.black26)),
+                        // prefixIcon: Icon(Icons.person),
+                        prefixIcon: Container(
+                          margin: EdgeInsets.only(right: 10),
+                          width: MediaQuery.of(context).size.width * 0.2,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.horizontal(
+                                left: Radius.circular(18),
+                              ),
+                              color: pinkOne),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                'assets/icons/icons_discount.png',
+                                width: MediaQuery.of(context).size.width * 0.12,
+                              ),
+                            ],
+                          ),
+                        ),
+                        hintText: "Please enter your username",
+                        hintStyle: secondaryBlackStyle.copyWith(fontSize: 14)),
+                  )),
+              SizedBox(
+                height: 20,
+              ),
+              Divider(
+                color: grayTwo,
+                thickness: 1,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Row(
+                        children: [
+                          Text(
+                            'Items',
+                            style: primaryTextStyle.copyWith(
+                                fontSize: 14, fontWeight: medium),
+                          ),
+                          SizedBox(
+                            width: 3,
+                          ),
+                          Text(
+                            '(3)',
+                            style: primaryTextStyle.copyWith(
+                                fontSize: 14, fontWeight: medium),
+                          )
+                        ],
+                      ),
+                    ),
+                    Text(
+                      '\$30.52',
+                      style: primaryTextStyle.copyWith(
+                          fontSize: 14, fontWeight: semiBold),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Text(
+                        'Discount',
+                        style: primaryTextStyle.copyWith(
+                            fontSize: 14, fontWeight: medium),
+                      ),
+                    ),
+                    Text(
+                      '\$0',
+                      style: primaryTextStyle.copyWith(
+                          fontSize: 14, fontWeight: semiBold),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Divider(
+                color: grayTwo,
+                thickness: 1,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Text(
+                        'Discount',
+                        style: primaryTextStyle.copyWith(
+                            fontSize: 14, fontWeight: semiBold),
+                      ),
+                    ),
+                    Text(
+                      '\$0',
+                      style: primaryTextStyle.copyWith(
+                          fontSize: 14, fontWeight: semiBold),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                    margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.03),
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+                      width: double.infinity,
+                      height: MediaQuery.of(context).size.height * 0.07,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: pinkOne),
+                      child: TextButton(
+                        style: ButtonStyle(
+                            overlayColor:
+                                MaterialStateProperty.all(Colors.transparent)),
                         onPressed: () {
-                          Navigator.pop(context);
+                          Navigator.pushNamed(context, '/verification-page');
                         },
-                        icon: Image.asset(
-                          'assets/icons/icons_arrow_left_cart.png',
-                          width: 24,
-                        )),
+                        child: Text(
+                          'Payment',
+                          style: backgroundColorStyle.copyWith(
+                              fontSize: 14, fontWeight: medium),
+                        ),
+                      ),
+                    ),
                   ),
-                  Text(
-                    'Cart',
-                    style: primaryTextStyle.copyWith(
-                        fontSize: 14, fontWeight: semiBold),
-                  ),
-                  Container(
-                    child: IconButton(
-                        onPressed: () {},
-                        icon: Image.asset(
-                          'assets/icons/icon_options_cart.png',
-                          width: 24,
-                        )),
-                  ),
-                ],
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: Column(
-                children: [
-                  ProductCartTile(),
-                  ProductCartTile(),
-                  ProductCartTile(),
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
