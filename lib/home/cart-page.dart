@@ -55,6 +55,11 @@ class CartPage extends StatelessWidget {
                     ProductCartTile(),
                     ProductCartTile(),
                     ProductCartTile(),
+                    ProductCartTile(),
+                    ProductCartTile(),
+                    SizedBox(
+                      height: defaultMargin,
+                    ),
                   ],
                 ),
               ),
@@ -72,7 +77,7 @@ class CartPage extends StatelessWidget {
           width: double.infinity,
           decoration: BoxDecoration(color: backgroundColor, boxShadow: [
             BoxShadow(
-              color: grayTwo,
+              color: graythree,
               spreadRadius: 1,
               blurRadius: 2,
               offset: Offset(0, 1), // changes position of shadow
@@ -83,55 +88,75 @@ class CartPage extends StatelessWidget {
               SizedBox(
                 height: defaultMargin,
               ),
-              Container(
-                  margin: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * 0.01,
-                      left: defaultMargin,
-                      right: defaultMargin),
-                  child: TextField(
-                    textAlign: TextAlign.start,
-                    textAlignVertical: TextAlignVertical.center,
-                    keyboardType: TextInputType.emailAddress,
-                    cursorColor: grayOne,
-                    style: TextStyle(color: blackColor),
-                    // obscureText: true,
-                    decoration: InputDecoration(
-                        contentPadding: EdgeInsets.zero,
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(18)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(18),
-                            borderSide: BorderSide(color: grayTwo)),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(18),
-                            borderSide: BorderSide(color: Colors.black26)),
-                        // prefixIcon: Icon(Icons.person),
-                        prefixIcon: Container(
-                          margin: EdgeInsets.only(right: 10),
-                          width: MediaQuery.of(context).size.width * 0.2,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.horizontal(
-                                left: Radius.circular(18),
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                        margin: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height * 0.01,
+                            left: defaultMargin,),
+                        child: TextField(
+                          textAlign: TextAlign.start,
+                          textAlignVertical: TextAlignVertical.center,
+                          textInputAction: TextInputAction.go,
+                          cursorColor: grayTwo,
+                          style: TextStyle(color: blackColor),
+                          // obscureText: true,
+                          decoration: InputDecoration(
+                              contentPadding: EdgeInsets.zero,
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(18)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(18),
+                                  borderSide: BorderSide(color: grayTwo)),
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(18),
+                                  borderSide: BorderSide(color: grayTwo)),
+                              // prefixIcon: Icon(Icons.person),
+                              prefixIcon: Container(
+                                margin: EdgeInsets.only(right: 10),
+                                width: MediaQuery.of(context).size.width * 0.15,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.horizontal(
+                                      left: Radius.circular(18),
+                                    ),
+                                    color: pinkOne),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset(
+                                      'assets/icons/icons_discount.png',
+                                      width: MediaQuery.of(context).size.width * 0.09,
+                                    ),
+                                  ],
+                                ),
                               ),
-                              color: pinkOne),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                'assets/icons/icons_discount.png',
-                                width: MediaQuery.of(context).size.width * 0.12,
-                              ),
-                            ],
-                          ),
-                        ),
-                        hintText: "Please enter your username",
-                        hintStyle: secondaryBlackStyle.copyWith(fontSize: 14)),
-                  )),
+                              hintText: "Code voucher...",
+                              hintStyle: secondaryBlackStyle.copyWith(fontSize: 14)),
+                        )),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(
+                      right: defaultMargin
+                    ),
+                    child: TextButton(
+                      onPressed: (){}, 
+                      child: Text('Add Voucher', style: pinkOneStyle.copyWith(
+                        fontSize: 12,
+                        fontWeight: semiBold
+                      ),)
+                    ),
+                  )
+                ],
+              ),
               SizedBox(
                 height: 20,
               ),
               Divider(
                 color: grayTwo,
-                thickness: 1,
+                thickness: 0.7,
+                indent: defaultMargin,
+                endIndent: defaultMargin,
               ),
               SizedBox(
                 height: 20,
@@ -196,7 +221,9 @@ class CartPage extends StatelessWidget {
               ),
               Divider(
                 color: grayTwo,
-                thickness: 1,
+                thickness: 0.7,
+                indent: defaultMargin,
+                endIndent: defaultMargin,
               ),
               SizedBox(
                 height: 10,
@@ -208,7 +235,7 @@ class CartPage extends StatelessWidget {
                   children: [
                     Container(
                       child: Text(
-                        'Discount',
+                        'Total Price',
                         style: primaryTextStyle.copyWith(
                             fontSize: 14, fontWeight: semiBold),
                       ),
@@ -222,30 +249,29 @@ class CartPage extends StatelessWidget {
                 ),
               ),
               Container(
-                    margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.03),
-                    child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-                      width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 0.07,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(18),
-                          color: pinkOne),
-                      child: TextButton(
-                        style: ButtonStyle(
-                            overlayColor:
-                                MaterialStateProperty.all(Colors.transparent)),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/verification-page');
-                        },
-                        child: Text(
-                          'Payment',
-                          style: backgroundColorStyle.copyWith(
-                              fontSize: 14, fontWeight: medium),
-                        ),
-                      ),
+                margin: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.03),
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+                  width: double.infinity,
+                  height: MediaQuery.of(context).size.height * 0.07,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(18), color: pinkOne),
+                  child: TextButton(
+                    style: ButtonStyle(
+                        overlayColor:
+                            MaterialStateProperty.all(Colors.transparent)),
+                    onPressed: () {
+                      // create link;
+                    },
+                    child: Text(
+                      'Payment',
+                      style: backgroundColorStyle.copyWith(
+                          fontSize: 14, fontWeight: medium),
                     ),
                   ),
+                ),
+              ),
             ],
           ),
         ),
