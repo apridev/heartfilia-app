@@ -2,9 +2,24 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:heartfilia_app/template.dart';
 import 'package:heartfilia_app/widgets/daily_schedule_tile.dart';
+import 'package:heartfilia_app/widgets/data_schedule_tile.dart';
 import 'package:heartfilia_app/widgets/menu_profile_tile.dart';
+import 'package:table_calendar/table_calendar.dart';
 
-class CalenderPage extends StatelessWidget {
+class CalenderPage extends StatefulWidget {
+  @override
+  State<CalenderPage> createState() => _CalenderPageState();
+}
+
+class _CalenderPageState extends State<CalenderPage> {
+  DateTime today = DateTime.now();
+
+  void _onDaySelected(DateTime day, DateTime focusedDay) {
+    setState(() {
+      today = day;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,225 +71,74 @@ class CalenderPage extends StatelessWidget {
           onRefresh: _refresh,
           child: ListView(
             children: [
-              Column(
-                children: [
-                  // !!don't fixed automatic
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+              TableCalendar(
+                headerStyle: HeaderStyle(
+                    formatButtonVisible: false, titleCentered: true),
+                startingDayOfWeek: StartingDayOfWeek.monday,
+                locale: "en_US",
+                rowHeight: 43,
+                selectedDayPredicate: (day) => isSameDay(day, today),
+                availableGestures: AvailableGestures.all,
+                focusedDay: today,
+                firstDay: DateTime.utc(2010, 10, 16),
+                lastDay: DateTime.utc(2030, 3, 14),
+                onDaySelected: _onDaySelected,
+                calendarStyle: CalendarStyle(
+                  todayDecoration:
+                      BoxDecoration(color: pinkTwo, shape: BoxShape.circle),
+                  selectedDecoration:
+                      BoxDecoration(color: greenOne, shape: BoxShape.circle),
+                ),
+                daysOfWeekStyle: DaysOfWeekStyle(
+                    weekdayStyle: primaryTextStyle.copyWith(
+                        fontSize: 14, fontWeight: semiBold),
+                    weekendStyle: primaryTextStyle.copyWith(
+                        fontSize: 14, fontWeight: semiBold)),
+              ),
+              Container(
+                // todo menurunkan konten
+                margin: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.030),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: backgroundColor,
+                ),
+                child: Container(
+                  margin: EdgeInsets.only(
+                      left: defaultMargin, right: defaultMargin),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.arrow_back_ios_rounded)),
+                      // !Isi Widget Disini
                       Text(
-                        'August',
+                        ''+ today.toString().split(" ")[0],
                         style: primaryTextStyle.copyWith(
                             fontSize: 14, fontWeight: medium),
                       ),
-                      IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.arrow_forward_ios_rounded)),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      DataScheduleTile(),
+                      DataScheduleTile(),
+                      DataScheduleTile(),
+                      DataScheduleTile(),
+                      DataScheduleTile(),
                     ],
                   ),
-                  Container(
-                    margin: EdgeInsets.only(
-                        top: 14, left: defaultMargin, right: defaultMargin),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Mon',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: semiBold),
-                        ),
-                        Text(
-                          'Tue',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: semiBold),
-                        ),
-                        Text(
-                          'Today',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: semiBold),
-                        ),
-                        Text(
-                          'Thu',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: semiBold),
-                        ),
-                        Text(
-                          'Sat',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: semiBold),
-                        ),
-                        Text(
-                          'Sun',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: semiBold),
-                        ),
-                        Text(
-                          'Sun',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: semiBold),
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.02,
-                        left: defaultMargin,
-                        right: defaultMargin),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                            width: 30,
-                            height: 30,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle, color: greenOne),
-                            child: Center(
-                              child: Text(
-                                '11',
-                                style: backgroundColorStyle.copyWith(
-                                    fontSize: 14, fontWeight: medium),
-                                textAlign: TextAlign.center,
-                              ),
-                            )),
-                        Container(
-                            width: 30,
-                            height: 30,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle, color: greenOne),
-                            child: Center(
-                              child: Text(
-                                '12',
-                                style: backgroundColorStyle.copyWith(
-                                    fontSize: 14, fontWeight: medium),
-                                textAlign: TextAlign.center,
-                              ),
-                            )),
-                        Container(
-                            width: 30,
-                            height: 30,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(color: pinkOne, width: 2)),
-                            child: Center(
-                              child: Text(
-                                '11',
-                                style: pinkOneStyle.copyWith(
-                                    fontSize: 14, fontWeight: medium),
-                                textAlign: TextAlign.center,
-                              ),
-                            )),
-                        Text(
-                          '14',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: medium),
-                        ),
-                        Text(
-                          '15',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: medium),
-                        ),
-                        Text(
-                          '16',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: medium),
-                        ),
-                        Text(
-                          '17',
-                          style: primaryTextStyle.copyWith(
-                              fontSize: 14, fontWeight: medium),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.vertical,
-                    child: Column(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height * 0.03,
-                              left: defaultMargin,
-                              right: defaultMargin),
-                          child: Column(
-                            children: [
-                              // ??Gesture Detector
-                              DottedBorder(
-                                color: grayTwo,
-                                strokeWidth: 2,
-                                borderType: BorderType.RRect,
-                                radius: Radius.circular(12),
-                                dashPattern: [10, 5],
-                                child: Container(
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.08,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(12),
-                                      color: backgroundColor),
-                                  child: Container(
-                                    margin: EdgeInsets.only(
-                                        left: defaultMargin,
-                                        right: defaultMargin),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          'Add step / product',
-                                          style: primaryTextStyle.copyWith(
-                                              fontSize: 14,
-                                              fontWeight: semiBold),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.pushNamed(
-                                                context, '/add-schedule-page');
-                                          },
-                                          child: Image.asset(
-                                            'assets/icons/icon_create_calender.png',
-                                            width: 27,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              // ?? Not Fixed
-                              DailyScheduleTile(
-                                images: 'assets/images/image_moon.png',
-                                categories: 'Sun Screen',
-                                name: 'Wardah UV Shield Essential Sunscreen...',
-                                checkMode: 'assets/icons/icon_checklist_on.png',
-                              ),
-                              DailyScheduleTile(
-                                images: 'assets/images/image_sun.png',
-                                categories: 'Toner',
-                                name:
-                                    "Kiehl's Calendula Herbal Extract Alcohol...",
-                                checkMode: "assets/icons/icon_checklist_on.png",
-                              ),
-                              DailyScheduleTile(
-                                images: 'assets/images/image_moon.png',
-                                categories: 'Clenser',
-                                name: "Garnier Micellar Cleansing Water Pink ",
-                                checkMode:
-                                    "assets/icons/icon_checklist_off.png",
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                ),
+              ),
+              SizedBox(
+                height: 20,
               ),
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {},
+        backgroundColor: pinkOne,
       ),
     );
   }
