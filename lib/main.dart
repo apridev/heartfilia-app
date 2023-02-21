@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:heartfilia_app/components/add_schedule.dart';
 import 'package:heartfilia_app/components/calender_page.dart';
 import 'package:heartfilia_app/components/chat_page.dart';
+import 'package:heartfilia_app/components/create_calendar.dart';
 import 'package:heartfilia_app/components/detail_chat_page.dart';
 import 'package:heartfilia_app/components/detail_product.dart';
 import 'package:heartfilia_app/components/edit-profile.dart';
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
         '/detail-chat-page' :(context) => DetailChatPage(),
         '/add-schedule-page' :(context) => AddSchedule(),
         '/edit-profile-page' :(context) => EditProfile(),
+        '/create-calendar' :(context) => CreateCalendar(),
       },
     );
   }
