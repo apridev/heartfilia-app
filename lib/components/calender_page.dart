@@ -137,7 +137,9 @@ class _CalenderPageState extends State<CalenderPage> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/create-calendar');
+        },
         backgroundColor: pinkOne,
       ),
     );
