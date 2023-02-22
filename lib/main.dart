@@ -16,6 +16,7 @@ import 'package:heartfilia_app/home/cart-page.dart';
 import 'package:heartfilia_app/home/register_page.dart';
 import 'package:heartfilia_app/home/login_page.dart';
 import 'package:heartfilia_app/home/reset_password.dart';
+import 'package:heartfilia_app/home/search-page.dart';
 import 'package:heartfilia_app/home/verification-page.dart';
 import 'package:heartfilia_app/pages/onboarding_page.dart';
 import 'package:heartfilia_app/pages/splash_screen.dart';
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
         '/add-schedule-page' :(context) => AddSchedule(),
         '/edit-profile-page' :(context) => EditProfile(),
         '/create-calendar' :(context) => CreateCalendar(),
+        '/search-page' :(context) => SearchPage(),
       },
     );
   }
