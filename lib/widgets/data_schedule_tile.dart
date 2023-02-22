@@ -3,6 +3,16 @@ import 'package:heartfilia_app/template.dart';
 
 class DataScheduleTile extends StatelessWidget {
 
+  final String timer;
+  final String tittle;
+  final String description;
+
+  DataScheduleTile({
+    required this.timer,
+    required this.tittle,
+    required this.description,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,7 +23,7 @@ class DataScheduleTile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            '10 am',
+            timer,
             style: primaryTextStyle.copyWith(fontSize: 13, fontWeight: semiBold),
           ),
           Container(
@@ -37,7 +47,7 @@ class DataScheduleTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Sun Screen',
+                    tittle,
                     style: primaryTextStyle.copyWith(
                         fontSize: 14, fontWeight: semiBold),
                   ),
@@ -45,7 +55,7 @@ class DataScheduleTile extends StatelessWidget {
                     height: 6,
                   ),
                   Text(
-                    'Wardah UV Shield Essential Sunscreen... ',
+                    description,
                     style: secondaryBlackStyle.copyWith(
                         fontSize: 13,
                         fontWeight: medium,
