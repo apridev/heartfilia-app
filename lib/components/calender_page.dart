@@ -98,7 +98,7 @@ class _CalenderPageState extends State<CalenderPage> {
               Container(
                 // todo menurunkan konten
                 margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.030),
+                    top: MediaQuery.of(context).size.height * 0.020),
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
@@ -112,18 +112,31 @@ class _CalenderPageState extends State<CalenderPage> {
                     children: [
                       // !Isi Widget Disini
                       Text(
-                        ''+ today.toString().split(" ")[0],
+                        '' + today.toString().split(" ")[0],
                         style: primaryTextStyle.copyWith(
                             fontSize: 14, fontWeight: medium),
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      DataScheduleTile(),
-                      DataScheduleTile(),
-                      DataScheduleTile(),
-                      DataScheduleTile(),
-                      DataScheduleTile(),
+                      DataScheduleTile(
+                          timer: '10 am',
+                          tittle: 'Sun Screen',
+                          description:
+                              'Wardah UV Shield Essential Sunscreen..'
+                      ),
+                      DataScheduleTile(
+                          timer: '6 am',
+                          tittle: 'Serum',
+                          description:
+                              'Scarlett Whitening Brightly to Glow Mini...'
+                      ),
+                      DataScheduleTile(
+                          timer: '7 pm',
+                          tittle: 'Toner',
+                          description:
+                              "Kiehl's Calendula Herbal Extract Alcohol..."
+                      ),
                     ],
                   ),
                 ),
