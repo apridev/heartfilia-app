@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
                 textAlign: TextAlign.start,
                 textAlignVertical: TextAlignVertical.center,
                 textInputAction: TextInputAction.search,
-                cursorColor: pinkOne,
+                cursorColor: secondaryBlackColor,
                 onTap: () {
                   Navigator.push(
                     context,
@@ -45,14 +45,16 @@ class HomePage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(18)),
                     focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(18),
-                        borderSide: BorderSide(color: pinkOne)),
+                        borderSide: BorderSide(color: grayTwo)),
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(18),
                         borderSide: BorderSide(color: grayTwo)),
                     // prefixIcon: Icon(Icons.person),
                     prefixIcon: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [Icon(Icons.search)],
+                      children: [
+                        Image.asset('assets/icons/icons_search.png', width: 18,)
+                      ],
                     ),
                     hintText: "I’m looking for...",
                     hintStyle: secondaryBlackStyle.copyWith(fontSize: 14)),
