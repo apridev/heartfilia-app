@@ -49,7 +49,7 @@ class DataScheduleTile extends StatelessWidget {
                   Text(
                     tittle,
                     style: primaryTextStyle.copyWith(
-                        fontSize: 14, fontWeight: semiBold),
+                        fontSize: 14, fontWeight: medium),
                   ),
                   SizedBox(
                     height: 6,
@@ -67,7 +67,7 @@ class DataScheduleTile extends StatelessWidget {
                   Text(
                     '10 am - 5 pm',
                     style: primaryTextStyle.copyWith(
-                        fontSize: 13, fontWeight: semiBold),
+                        fontSize: 13, fontWeight: medium),
                   )
                 ],
               ),
