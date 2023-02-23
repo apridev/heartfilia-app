@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heartfilia_app/home/search-page.dart';
 import 'package:heartfilia_app/template.dart';
 import 'package:heartfilia_app/widgets/categories_tile.dart';
 import 'package:heartfilia_app/widgets/flash_sale_product_tile.dart';
@@ -9,7 +10,6 @@ import 'package:heartfilia_app/widgets/recommendation_product_tile.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     Widget searchproduct() {
       return Container(
         margin: EdgeInsets.only(left: 20, right: 20),
@@ -18,10 +18,25 @@ class HomePage extends StatelessWidget {
             Expanded(
               child: Container(
                   child: TextField(
+                    focusNode: FirstDisabledFocusNode(),
                 textAlign: TextAlign.start,
                 textAlignVertical: TextAlignVertical.center,
                 textInputAction: TextInputAction.search,
                 cursorColor: pinkOne,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (BuildContext context,
+                          Animation<double> animation1,
+                          Animation<double> animation2) {
+                        return SearchPage();
+                      },
+                      transitionDuration: Duration.zero,
+                      reverseTransitionDuration: Duration.zero,
+                    ),
+                  );
+                },
                 style: TextStyle(color: blackColor),
                 // obscureText: true,
                 decoration: InputDecoration(
@@ -386,34 +401,36 @@ class HomePage extends StatelessWidget {
             child: CustomScrollView(
               slivers: [
                 SliverAppBar(
-                  titleSpacing: 0,
+                    titleSpacing: 0,
                     backgroundColor: backgroundColor,
                     title: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(
-                            left: 20
-                          ),
+                          margin: EdgeInsets.only(left: 20),
                           child: Image.asset(
                             'assets/images/heartfilia_home.png',
                             width: MediaQuery.of(context).size.width * 0.2,
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(
-                            right: 10
-                          ),
+                          margin: EdgeInsets.only(right: 10),
                           child: Row(
                             children: [
                               IconButton(
                                   onPressed: () {
                                     Navigator.pushNamed(context, '/cart-page');
                                   },
-                                  icon: Image.asset('assets/icons/icon_cart.png', width: 24,)),
+                                  icon: Image.asset(
+                                    'assets/icons/icon_cart.png',
+                                    width: 24,
+                                  )),
                               IconButton(
                                   onPressed: () {},
-                                  icon: Image.asset('assets/icons/icon_notification.png', width: 24,)),
+                                  icon: Image.asset(
+                                    'assets/icons/icon_notification.png',
+                                    width: 24,
+                                  )),
                             ],
                           ),
                         ),
@@ -448,5 +465,12 @@ class HomePage extends StatelessWidget {
 
   Future<void> _refresh() {
     return Future.delayed(Duration(seconds: 2));
+  }
+}
+
+class FirstDisabledFocusNode extends FocusNode{
+  @override
+  bool consumeKeyboardToken() {
+    return false;
   }
 }
