@@ -4,6 +4,72 @@ import 'package:heartfilia_app/template.dart';
 class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Widget searchProduct() {
+      return Container(
+        margin: EdgeInsets.only(left: 20, right: 20),
+        child: Row(
+          children: [
+            Expanded(
+              child: Container(
+                  child: TextField(
+                textAlign: TextAlign.start,
+                textAlignVertical: TextAlignVertical.center,
+                textInputAction: TextInputAction.search,
+                cursorColor: secondaryBlackColor,
+                autofocus: true,
+                style: TextStyle(color: blackColor),
+                // obscureText: true,
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.all(12),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(18)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(18),
+                        borderSide: BorderSide(color: grayTwo)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(18),
+                        borderSide: BorderSide(color: grayTwo)),
+                    // prefixIcon: Icon(Icons.person),
+                    prefixIcon: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'assets/icons/icons_search.png',
+                          width: 18,
+                        )
+                      ],
+                    ),
+                    hintText: "I’m looking for...",
+                    hintStyle: secondaryBlackStyle.copyWith(fontSize: 14)),
+              )),
+            ),
+            SizedBox(
+              width: 12,
+            ),
+            Image.asset(
+              'assets/icons/icon_hamburger_filter.png',
+              width: MediaQuery.of(context).size.width * 0.12,
+            )
+          ],
+        ),
+      );
+    }
+    
+    // !bikin ini
+    Widget titleRecent(){
+      return Container(
+        margin: EdgeInsets.only(
+          top: defaultMargin,
+          left: defaultMargin,
+          right: defaultMargin
+        ),
+        child: Text('Recent', style: primaryTextStyle.copyWith(
+          fontSize: 14,
+          fontWeight: semiBold
+        ),),
+      );
+    }
+
     return Scaffold(
       backgroundColor: backgroundColor,
       body: GestureDetector(
@@ -57,56 +123,10 @@ class SearchPage extends StatelessWidget {
             ),
             SliverToBoxAdapter(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    margin: EdgeInsets.only(left: 20, right: 20),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                              child: TextField(
-                            textAlign: TextAlign.start,
-                            textAlignVertical: TextAlignVertical.center,
-                            textInputAction: TextInputAction.search,
-                            cursorColor: secondaryBlackColor,
-                            autofocus: true,
-                            style: TextStyle(color: blackColor),
-                            // obscureText: true,
-                            decoration: InputDecoration(
-                                contentPadding: EdgeInsets.all(12),
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(18)),
-                                focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(18),
-                                    borderSide: BorderSide(color: grayTwo)),
-                                enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(18),
-                                    borderSide: BorderSide(color: grayTwo)),
-                                // prefixIcon: Icon(Icons.person),
-                                prefixIcon: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image.asset(
-                                      'assets/icons/icons_search.png',
-                                      width: 18,
-                                    )
-                                  ],
-                                ),
-                                hintText: "I’m looking for...",
-                                hintStyle:
-                                    secondaryBlackStyle.copyWith(fontSize: 14)),
-                          )),
-                        ),
-                        SizedBox(
-                          width: 12,
-                        ),
-                        Image.asset(
-                          'assets/icons/icon_hamburger_filter.png',
-                          width: MediaQuery.of(context).size.width * 0.12,
-                        )
-                      ],
-                    ),
-                  )
+                  searchProduct(),
+                  titleRecent()
                 ],
               ),
             ),
