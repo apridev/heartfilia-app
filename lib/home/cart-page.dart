@@ -258,7 +258,7 @@ class CartPage extends StatelessWidget {
                         overlayColor:
                             MaterialStateProperty.all(Colors.transparent)),
                     onPressed: () {
-                      // create link;
+                      Navigator.pushNamed(context, '/checkout-page');
                     },
                     child: Text(
                       'Payment',
