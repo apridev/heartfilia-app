@@ -53,10 +53,6 @@ class CartPage extends StatelessWidget {
                 child: Column(
                   children: [
                     ProductCartTile(),
-                    ProductCartTile(),
-                    ProductCartTile(),
-                    ProductCartTile(),
-                    ProductCartTile(),
                     SizedBox(
                       height: defaultMargin,
                     ),
